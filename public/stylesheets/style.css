@@ -1,2 +1,83 @@
+/* Variables */
+/* Body */
+body {
+  font-family: "brandon-grotesque", helvetica, sans-serif; }
+
+/* Nav */
+nav {
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  box-sizing: border-box;
+  background-color: #32B67A;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+  border-bottom: 1px solid #278e5f; }
+  @media screen and (max-width: 800px) {
+    nav {
+      flex-direction: column;
+      align-items: center; } }
+  @media screen and (min-width: 800px) {
+    nav ul li {
+      display: inline-block;
+      font-size: 20px; } }
+  nav ul li a {
+    color: white;
+    padding: 5px 15px;
+    text-decoration: none;
+    transition: 0.2s all;
+    border-radius: 10px; }
+    nav ul li a:hover {
+      background-color: #0E38B1;
+      transition: 0.2s all; }
+    nav ul li a i {
+      color: #F0CF61; }
+  nav .logo {
+    display: flex;
+    align-items: center; }
+    nav .logo a {
+      color: white;
+      font-size: 30px;
+      text-decoration: none;
+      margin: auto 20px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px; }
+    nav .logo img {
+      max-height: 80px; }
+
+/* Home */
+.home .container {
+  min-height: 100vh;
+  padding: 0 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-image: url("../images/1762.jpg");
+  background-size: cover; }
+  @media screen and (max-width: 800px) {
+    .home .container {
+      min-height: 70vh; } }
+  .home .container h1 {
+    color: white;
+    font-size: 4em;
+    font-family: "leitura-news", georgia, sans-serif; }
+  .home .container .hm {
+    display: inline-block;
+    padding: 5px 20px;
+    margin: 50px 15px;
+    font-size: 2em;
+    border: 5px solid #F0CF61;
+    border-radius: 10px;
+    background-color: rgba(50, 182, 122, 0.8);
+    transition: 0.2s all;
+    color: white;
+    cursor: pointer; }
+    .home .container .hm:hover {
+      background-color: #0E38B1;
+      transition: 0.2s all; }
 
 /*# sourceMappingURL=style.css.map */
