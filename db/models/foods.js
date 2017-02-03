@@ -2,7 +2,7 @@
 module.exports = function(sequelize, DataTypes) {
   var Foods = sequelize.define('Foods', {
     name: DataTypes.STRING(255),
-    amount: DataTypes.INT,
+    amount: DataTypes.INTEGER,
     calories: DataTypes.DECIMAL,
     protein: DataTypes.DECIMAL,
     carbohydrates: DataTypes.DECIMAL,

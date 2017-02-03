@@ -6,7 +6,6 @@ body {
 /* Nav */
 nav {
   display: flex;
-  position: fixed;
   width: 100vw;
   box-sizing: border-box;
   background-color: #32B67A;
