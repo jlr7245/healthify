@@ -16,7 +16,7 @@ router.post('/register', (req, res, next)  => {
   .then((user) => {
     req.login(user, (err) => {
       if (err) return next(err);
-      res.redirect('/user');
+      res.redirect('/foods');
     });
   })
   .catch((err) => { res.status(500).json({ status: 'error' }); });

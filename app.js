@@ -15,6 +15,7 @@ const passport = require('passport');
 const index = require('./routes/index');
 const authRoutes = require('./routes/auth.js');
 const userRoutes = require('./routes/user.js');
+const foodRoutes = require('./routes/foods.js');
 
 const app = express();
 
@@ -50,6 +51,7 @@ app.use(passport.session());
 app.use('/', index);
 app.use('/user', userRoutes);
 app.use('/auth', authRoutes);
+app.use('/foods', foodRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
