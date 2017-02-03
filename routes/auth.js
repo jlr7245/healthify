@@ -1,3 +1,4 @@
+//healthify
 const express = require('express');
 const router = express.Router();
 
@@ -15,7 +16,6 @@ router.post('/register', (req, res, next)  => {
   .then((user) => {
     req.login(user, (err) => {
       if (err) return next(err);
-
       res.redirect('/user');
     });
   })

@@ -1,3 +1,5 @@
+//healthify
+
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
@@ -11,9 +13,8 @@ const session = require('express-session');
 const passport = require('passport');
 
 const index = require('./routes/index');
-const users = require('./routes/users');
-const authRoutes = require('./routes/auth.js')
-const userRoutes = require('./routes/users.js')
+const authRoutes = require('./routes/auth.js');
+const userRoutes = require('./routes/user.js');
 
 const app = express();
 
@@ -37,8 +38,17 @@ app.use(require('node-sass-middleware')({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret: process.env.SECRET_KEY,
+  resave: false,
+  saveUninitialized: true
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use('/', index);
-app.use('/users', userRoutes)
+app.use('/user', userRoutes);
 app.use('/auth', authRoutes);
 
 // catch 404 and forward to error handler

@@ -67,6 +67,7 @@ nav {
     font-family: "leitura-news", georgia, sans-serif; }
   .home .container .hm {
     display: inline-block;
+    text-decoration: none;
     padding: 5px 20px;
     margin: 50px 15px;
     font-size: 2em;
