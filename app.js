@@ -5,6 +5,7 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
+const moment = require('moment');
 
 const session = require('express-session');
 const passport = require('passport');
