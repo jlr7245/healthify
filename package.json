@@ -7,6 +7,7 @@
     "dev": "nodemon ./bin/www"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.0",
     "body-parser": "~1.15.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
@@ -19,6 +20,7 @@
     "morgan": "~1.7.0",
     "node-sass-middleware": "0.9.8",
     "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
     "pg": "^6.1.2",
     "pg-hstore": "^2.3.2",
     "sequelize": "^3.30.1",
