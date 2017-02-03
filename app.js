@@ -12,6 +12,8 @@ const passport = require('passport');
 
 const index = require('./routes/index');
 const users = require('./routes/users');
+const authRoutes = require('./routes/auth.js')
+const userRoutes = require('./routes/users.js')
 
 const app = express();
 
@@ -36,7 +38,8 @@ app.use(require('node-sass-middleware')({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
+app.use('/users', userRoutes)
+app.use('/auth', authRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
