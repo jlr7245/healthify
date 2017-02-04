@@ -28,10 +28,12 @@ router.get('/:userid/new', function(req, res, next) {
 
 //Posts data from input form to database
 router.post('/:id', dashHelpers.getFoodInfo, function(req, res, next) {
-  console.log(req.user.dataValues.id);
-  models.Foods.create({
-    name: req.body.foodName,
-    belongsTo: req.user.dataValues.id
+  res.locals.foodData.forEach((food) => {
+    models.Foods.create({
+      name: food.food_name,
+      
+      belongsTo: req.user.dataValues.id
+    });
   }).then(function() {
     res.redirect('/user');
   });

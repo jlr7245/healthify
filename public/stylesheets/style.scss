@@ -44,7 +44,7 @@ footer {
 }
 
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], textarea {
   border-bottom: 3px solid $brand;
   font-size: 1.5em;
   display: block;
@@ -56,6 +56,7 @@ input[type=text], input[type=password] {
   &:focus {
     border-color: $accent;
     transition: 0.2s all;
+    outline:0;
   }
 }
 

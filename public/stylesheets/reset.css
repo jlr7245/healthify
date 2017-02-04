@@ -51,7 +51,7 @@ table {
 /* ------ end reset.css, begin jbase */
 
 /* button & input reset */
-button, input {
+button, input, textarea {
     background: none;
     border: 0;
     color: inherit;
@@ -67,10 +67,11 @@ button, input {
         -ms-user-select: none;
 }
 input::-moz-focus-inner,
-button::-moz-focus-inner {
+button::-moz-focus-inner,
+textarea::-moz-focus-inner {
     border: 0;
     padding: 0;
 }
-button:focus, input:focus {
+button:focus, input:focus, textarea::focus {
   outline:none;
 }
