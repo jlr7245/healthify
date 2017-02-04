@@ -3,6 +3,71 @@
 body {
   font-family: "brandon-grotesque", helvetica, sans-serif; }
 
+.container {
+  padding-top: 50px;
+  max-width: 90vw;
+  margin: 0 auto; }
+  @media screen and (min-width: 1200px) {
+    .container {
+      max-width: 80vw; } }
+
+.wrapper {
+  min-height: 90vh; }
+
+footer {
+  background-color: #EBE8E1;
+  color: #0E38B1;
+  padding: 50px 10vw;
+  display: flex;
+  flex-direction: column; }
+  @media screen and (min-width: 800px) {
+    footer {
+      flex-direction: row; } }
+  footer .footercol {
+    flex: 1; }
+
+input[type=text], input[type=password] {
+  border-bottom: 3px solid #32B67A;
+  font-size: 1.5em;
+  display: block;
+  margin: 20px 0;
+  padding: 5px;
+  font-family: "alternate-gothic-no-2-d", impact, sans-serif;
+  width: 100%;
+  transition: 0.2s all; }
+  input[type=text]:focus, input[type=password]:focus {
+    border-color: #F0CF61;
+    transition: 0.2s all; }
+
+form {
+  width: 50vw;
+  border: 1px solid #eee;
+  padding: 50px;
+  margin: 0 auto;
+  text-align: center; }
+  form label {
+    color: #ccc;
+    font-size: 0.8em;
+    text-transform: uppercase; }
+  form input[type=submit] {
+    font-size: 1.8em;
+    margin: 20px;
+    padding: 5px 40px;
+    background-color: #0E38B1;
+    color: #EBE8E1;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s all; }
+    form input[type=submit]:hover {
+      background-color: #32B67A;
+      transition: 0.3s all; }
+  form .fields {
+    display: flex;
+    text-align: left; }
+    form .fields div {
+      margin: 15px;
+      flex: 1; }
+
 /* Nav */
 nav {
   display: flex;
@@ -48,6 +113,9 @@ nav {
       max-height: 80px; }
 
 /* Home */
+.home nav {
+  position: fixed; }
+
 .home .container {
   min-height: 100vh;
   padding: 0 150px;
@@ -79,5 +147,48 @@ nav {
     .home .container .hm:hover {
       background-color: #0E38B1;
       transition: 0.2s all; }
+
+/* Login */
+.welcmsg {
+  text-align: center;
+  margin: 20px 0 70px 0; }
+  .welcmsg h1 {
+    font-family: "leitura-news", georgia, sans-serif;
+    font-size: 3em; }
+
+/* dashboard */
+.top h1 {
+  font-size: 3em;
+  font-family: "leitura-news", georgia, sans-serif; }
+
+.todaysmeals {
+  margin: 20px 0; }
+  .todaysmeals ul {
+    display: flex;
+    margin: 15px 0; }
+    @media screen and (max-width: 800px) {
+      .todaysmeals ul {
+        flex-direction: column;
+        max-height: 300px;
+        overflow-x: auto;
+        border: 3px solid #EBE8E1;
+        padding: 15px; } }
+    .todaysmeals ul li {
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin: 5px;
+      flex: 1; }
+      .todaysmeals ul li h3 {
+        font-family: "alternate-gothic-no-2-d", impact, sans-serif;
+        font-size: 1.8em; }
+      .todaysmeals ul li p {
+        padding: 20px 0; }
+      .todaysmeals ul li .time {
+        background-color: #0E38B1;
+        color: white;
+        font-size: 0.8em;
+        text-transform: uppercase;
+        padding: 3px 5px;
+        border-radius: 10px; }
 
 /*# sourceMappingURL=style.css.map */

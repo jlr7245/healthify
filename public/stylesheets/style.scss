@@ -16,10 +16,89 @@ body {
   font-family: $bgr;
 }
 
+.container {
+  padding-top: 50px;
+  max-width: 90vw;
+  margin: 0 auto;
+  @media screen and (min-width: 1200px) {
+    max-width: 80vw;
+  }
+}
+
+.wrapper {
+  min-height: 90vh;
+}
+
+footer {
+  background-color: $accent-light;
+  color: $brand2;
+  padding: 50px 10vw;
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: 800px) {
+    flex-direction: row;
+  }
+  .footercol {
+    flex: 1;
+  }
+}
+
+
+input[type=text], input[type=password] {
+  border-bottom: 3px solid $brand;
+  font-size: 1.5em;
+  display: block;
+  margin: 20px 0;
+  padding: 5px;
+  font-family: $altg;
+  width: 100%;
+  transition: 0.2s all;
+  &:focus {
+    border-color: $accent;
+    transition: 0.2s all;
+  }
+}
+
+form {
+  width: 50vw;
+  border: 1px solid #eee;
+  padding: 50px;
+  margin: 0 auto;
+  text-align: center;
+  label {
+    color: #ccc;
+    font-size: 0.8em;
+    text-transform: uppercase;
+  }
+  input[type=submit] {
+    font-size: 1.8em;
+    margin: 20px;
+    padding: 5px 40px;
+    background-color: $brand2;
+    color: $accent-light;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s all;
+
+    &:hover {
+      background-color: $brand;
+      transition: 0.3s all;
+    }
+  }
+  .fields {
+    display: flex;
+    text-align:left;
+    div {
+      margin: 15px;
+      flex: 1;
+    }
+  }
+}
+
 /* Nav */
+
 nav {
   display: flex;
-  //position: fixed;
   width: 100vw;
   box-sizing: border-box;
   background-color: $brand;
@@ -74,6 +153,10 @@ nav {
 
 /* Home */
 
+.home nav {
+  position: fixed;
+}
+
 .home .container {
   min-height: 100vh;
   padding: 0 150px;
@@ -106,6 +189,60 @@ nav {
     &:hover {
       background-color: $brand2;
       transition: 0.2s all;
+    }
+  }
+}
+
+/* Login */
+.welcmsg {
+  text-align: center;
+  margin: 20px 0 70px 0;
+  h1 {
+    font-family: $ltn;
+    font-size: 3em;
+  }
+}
+
+/* dashboard */
+.top {
+  h1 {
+    font-size: 3em;
+    font-family: $ltn;
+  }
+}
+
+.todaysmeals {
+  margin: 20px 0;
+  ul {
+    display: flex;
+    margin: 15px 0;
+    @media screen and (max-width: 800px) {
+      flex-direction: column;
+      max-height: 300px;
+      overflow-x: auto;
+      border: 3px solid $accent-light;
+      padding: 15px;
+    }
+    li {
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin: 5px;
+      flex: 1;
+      h3 {
+        font-family: $altg;
+        font-size: 1.8em;
+      }
+      p {
+        padding: 20px 0;
+      }
+      .time {
+        background-color: $brand2;
+        color: white;
+        font-size: 0.8em;
+        text-transform:uppercase;
+        padding: 3px 5px;
+        border-radius:10px;
+      }
     }
   }
 }

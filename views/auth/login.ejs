@@ -1,6 +1,10 @@
 <% include ../partials/header %>
+<div class='container'>
+  <div class='welcmsg'>
+    <h1>Thank you for returning to Healthify.</h1>
+  </div>
   <form action='/auth/login' method='post'>
-
+    <div class='fields'>
       <div>
         <label>Username:</label>
         <input type='text' name='username' />
@@ -9,9 +13,8 @@
         <label>Password:</label>
         <input type='password' name='password' />
       </div>
-      <div>
-        <input type='submit' value='Log In'>
-      </div>
-    </form>
-
+    </div>
+      <input type='submit' value='Log In'>
+  </form>
+</div>
 <% include ../partials/footer %>
