@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var models = require('../db/models/index');
 const authHelpers = require('../auth/auth-helpers');
+const dashHelpers = require('../dash/dash-render');
 
 
 
@@ -26,7 +27,7 @@ router.get('/:userid/new', function(req, res, next) {
 });*/
 
 //Posts data from input form to database
-router.post('/:id', function(req, res, next) {
+router.post('/:id', dashHelpers.getFoodInfo, function(req, res, next) {
   console.log(req.user.dataValues.id);
   models.Foods.create({
     name: req.body.foodName,

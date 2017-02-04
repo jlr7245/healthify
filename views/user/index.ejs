@@ -2,6 +2,7 @@
 <div class='container'>
   <div class='top'>
     <h1>Welcome back, <%= user.fullName %>.</h1>
+    <a class='btn' href='/auth/logout'>Log out</a>
   </div>
   <div class='todaysmeals'>
     <h4>Today's Meals</h4>
@@ -28,7 +29,15 @@
       </li>
     </ul>
   </div>
+  <div class='foods'>
+    <% if (foods !== undefined) { %>
+     <% foods.forEach((food) => { %>
+       <li><%= food.name %></li>
+      <% }); %>
+    <% } %>
+  </div>
 </div>
 
 <% include ../partials/footer %>
+
 
