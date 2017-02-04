@@ -32,7 +32,7 @@
   <div class='foods'>
     <% if (foods !== undefined) { %>
      <% foods.forEach((food) => { %>
-       <li><%= food.name %></li>
+       <li><%= JSON.stringify(food) %></li>
       <% }); %>
     <% } %>
   </div>

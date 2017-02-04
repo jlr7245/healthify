@@ -27,12 +27,29 @@ function getFoodInfo(req,res,next) {
     timezone: 'US/Eastern'
   }).then((theResult) => {
     console.log(theResult.data);
-    res.locals.foodData = theResult.data;
+    res.locals.foodData = theResult.data.foods;
     return next();
   }).catch((err) => console.log(err));
 }
 
+function postFoodsIntoDatabase(req,res,next) {
+  res.locals.foodData.forEach((food) => {
+    models.Foods.create({
+      name: food.food_name,
+      calories: food.nf_calories,
+      protein: food.nf_protein,
+      carbohydrates: food.nf_total_carbohydrate,
+      totalFat: food.nf_total_fat,
+      sodium: food.nf_sodium,
+      imageURL: food.photo.highres,
+      belongsTo: req.user.dataValues.id
+    });
+  });
+  return next();
+}
+
 module.exports = {
   renderFoods,
-  getFoodInfo
+  getFoodInfo,
+  postFoodsIntoDatabase
 };
