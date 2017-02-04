@@ -192,4 +192,77 @@ nav {
         padding: 3px 5px;
         border-radius: 10px; }
 
+.foods ul li {
+  display: flex;
+  margin: 10px; }
+  .foods ul li .foodsub {
+    border-left: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    padding: 0 10px; }
+    .foods ul li .foodsub img {
+      height: 104px;
+      width: 150px; }
+    .foods ul li .foodsub label {
+      display: block;
+      font-size: 0.8rem;
+      color: #ccc;
+      text-transform: uppercase;
+      margin: 5px; }
+    .foods ul li .foodsub h2 {
+      font-size: 1.3em;
+      margin: 0 0 0 10px; }
+
+.first {
+  flex: 2; }
+
+.second, .third, .fourth {
+  flex: 1; }
+
+.fourth, .third {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start !important; }
+
+.third .warn, .third .good, .third .neutral {
+  position: relative; }
+  .third .warn .tooltip, .third .good .tooltip, .third .neutral .tooltip {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 1s; }
+    .third .warn .tooltip:after, .third .good .tooltip:after, .third .neutral .tooltip:after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent; }
+  .third .warn:hover .tooltip, .third .good:hover .tooltip, .third .neutral:hover .tooltip {
+    visibility: visible;
+    opacity: 1; }
+
+.third .warn {
+  color: #F03F35; }
+
+.third .good {
+  color: #32B67A; }
+
+.third .neutral {
+  color: #F0CF61; }
+
 /*# sourceMappingURL=style.css.map */

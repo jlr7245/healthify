@@ -43,7 +43,6 @@ footer {
   }
 }
 
-
 input[type=text], input[type=password], textarea {
   border-bottom: 3px solid $brand;
   font-size: 1.5em;
@@ -212,6 +211,10 @@ nav {
   }
 }
 
+.btn {
+  
+}
+
 .todaysmeals {
   margin: 20px 0;
   ul {
@@ -245,5 +248,101 @@ nav {
         border-radius:10px;
       }
     }
+  }
+}
+
+$pencilbrdr: 1px solid #eee;
+
+.foods {
+  ul {
+    li {
+      display: flex;
+      margin: 10px;
+      
+      .foodsub {
+        img {
+          height: 104px;
+          width: 150px;
+        }
+        border-left: $pencilbrdr;
+        display: flex;
+        align-items:center;
+        padding: 0 10px;
+        label {
+          display: block;
+          font-size: 0.8rem;
+          color: #ccc;
+          text-transform: uppercase;
+          margin: 5px;
+        }
+        h2 {
+          font-size: 1.3em;
+          margin: 0 0 0 10px;
+        }
+      }
+    }
+  }
+}
+
+.first {
+  flex: 2;
+}
+
+.second, .third, .fourth {
+  flex: 1;
+}
+
+.fourth, .third {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start !important;
+}
+
+.third {
+  .warn, .good, .neutral {
+    position: relative;
+    .tooltip {
+      visibility: hidden;
+      width: 120px;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      padding: 5px 0;
+      border-radius: 6px;
+
+      /* Position the tooltip text */
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -60px;
+
+      /* Fade in tooltip */
+      opacity: 0;
+      transition: opacity 1s;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+      }
+    }
+    &:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  .warn {
+    color: $warn;
+  }
+  .good {
+    color: $brand;
+  }
+  .neutral {
+    color: $accent;
   }
 }
