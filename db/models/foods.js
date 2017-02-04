@@ -14,7 +14,8 @@ module.exports = function(sequelize, DataTypes) {
     vitaminD: DataTypes.DECIMAL,
     vitaminE: DataTypes.DECIMAL,
     vitaminC: DataTypes.DECIMAL,
-    vitaminB6: DataTypes.DECIMAL
+    vitaminB6: DataTypes.DECIMAL,
+    belongsTo: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {
