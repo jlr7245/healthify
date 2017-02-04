@@ -27,9 +27,10 @@ router.get('/:userid/new', function(req, res, next) {
 
 //Posts data from input form to database
 router.post('/:id', function(req, res, next) {
+  console.log(req.user.dataValues.id);
   models.Foods.create({
     name: req.body.foodName,
-    belongsTo: req.user.id
+    belongsTo: req.user.dataValues.id
   }).then(function() {
     res.redirect('/user');
   });
