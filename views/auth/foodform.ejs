@@ -1,9 +1,9 @@
 <% include ../partials/header %>
-
-<form method='POST' action="<%= `/foods/${user.id}` %>" >
-  <input name='foodName' type='text'>
-  <button type='submit'>Add it!</button>
-</form>
-  <%= user.id %>
+<div class='container'>
+  <form method='POST' action="<%= `/foods/${user.id}` %>" >
+    <input name='foodName' type='text'>
+    <button type='submit'>Add it!</button>
+  </form>
+</div>
 
 <% include ../partials/footer %>

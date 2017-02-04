@@ -12,7 +12,7 @@ router.get('/', authHelpers.loginRequired, (req,res,next) => {
 
 
 router.get('/:userid/new', function(req, res, next) {
-  res.render('foods/new', { title: 'new food'});
+  res.render('foods/new', { title: 'new food', currentRoute: 'addfoods'});
 });
 
 //fetches all foods entered, from database 
@@ -38,7 +38,7 @@ router.post('/:id', function(req, res, next) {
 
 //route to specify what happens on press of delete submit button
 router.delete('/:id', function(req, res, next) {
-  models.food.destroy({
+  models.Foods.destroy({
     where: { id: req.params.id }
   }).then(function(food) {
     res.redirect('/foods');
@@ -48,21 +48,21 @@ router.delete('/:id', function(req, res, next) {
 
 //routes user to full food profile info on click of food Name link on main page
 router.get('/:id/:userid', function(req, res, next) {
-  models.food.findById(req.params.id).then(function(food) {
-    res.render('foods/show', { food: food, title: food.name});
+  models.Foods.findById(req.params.id).then(function(food) {
+    res.render('foods/show', { food: food, title: food.name, currentRoute: 'showfood'});
   });
 });
 
 //routes to edit view with input fields prepopulated with previously inputted information
 router.get('/:id/:userid/edit', function(req, res, next) {
-  models.food.findById(req.params.id).then(function(food) {
-    res.render('foods/edit', { food: food});
+  models.Foods.findById(req.params.id).then(function(food) {
+    res.render('foods/edit', { food: food, currentRoute: 'editfood'});
   });
 });
 
 //this function handles what happens on submit of editing food information
 router.put('/:id/:userid', function(req, res, next) {
-  models.food.update({
+  models.Foods.update({
   name:req.body.foodName
   }, { where: { id: req.params.id } }).then(function() {
     res.redirect('/foods/');
