@@ -27,16 +27,8 @@ router.get('/:userid/new', function(req, res, next) {
 });*/
 
 //Posts data from input form to database
-router.post('/:id', dashHelpers.getFoodInfo, function(req, res, next) {
-  res.locals.foodData.forEach((food) => {
-    models.Foods.create({
-      name: food.food_name,
-      
-      belongsTo: req.user.dataValues.id
-    });
-  }).then(function() {
+router.post('/:id', dashHelpers.getFoodInfo, dashHelpers.postFoodsIntoDatabase, function(req, res, next) {
     res.redirect('/user');
-  });
 });
 
 //route to specify what happens on press of delete submit button
