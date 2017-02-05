@@ -4,6 +4,7 @@
   <div class='top'>
     <h1>Welcome back, <%= user.fullName %>.</h1>
     <a class='btn' href='/auth/logout'>Log out</a>
+    <a class='btn' href='/foods'>Add foods</a>
   </div>
   
   <div class='todaysmeals'>
@@ -44,12 +45,14 @@
       
       <div id='tabcontent'>
         <div class='foods actv tabcont'>
-          <ul>
+          <ul id='pantrycontainer'>
           <% if (foods.length !== 0) { %>
            <% foods.forEach((food) => { %>
-             <li>
-              <% include ../partials/fooditem %>
-             </li>
+            <% if (!food.updated) { %>
+               <li class='pantryitem' data-id='<%= food.id %>'>
+                <% include ../partials/fooditem %>
+               </li>
+             <% } %>
             <% }); %>
           <% } else { %>
             <p>You haven't added any foods yet!</p>
@@ -69,9 +72,27 @@
   
   </div>
   
+  <div class='archives'>
+    <ul id='archive'>
+      <% if (foods.length !== 0) { %>
+       <% foods.forEach((food) => { %>
+        <% if (food.updated) { %>
+           <li class='archiveitem' data-id='<%= food.id %>'>
+            <% include ../partials/fooditem %>
+           </li>
+         <% } %>
+        <% }); %>
+      <% } else { %>
+        <p>You haven't archived any foods yet!</p>
+      <% } %>
+    </ul>
+  </div>
+  
 </div>
 
+
 <script src='/javascripts/dashtabs.js'></script>
+<script src='/javascripts/pantryhelpers.js'></script>
 <% include ../partials/footer %>
 
 

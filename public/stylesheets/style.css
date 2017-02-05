@@ -170,7 +170,7 @@ nav {
   font-size: 3em;
   font-family: "leitura-news", georgia, sans-serif; }
 
-.dash-container, .todaysmeals, .tbbr, .nutritiontrack {
+.dash-container, .todaysmeals, .tbbr, .nutritiontrack, .archives {
   background-color: white;
   margin: 20px 15px;
   padding: 50px;
@@ -245,35 +245,35 @@ nav {
   display: block; }
 
 /* ================== FOODSLIST STYLING ================ */
-.foods {
+.foods, .archives {
   user-select: none; }
-  .foods ul {
+  .foods ul, .archives ul {
     font-size: 0.8em; }
-    .foods ul li {
+    .foods ul li, .archives ul li {
       display: flex;
       margin: 5px;
       border-top: 1px solid #eee;
       border-bottom: 1px solid #eee;
       border-right: 1px solid #eee; }
       @media screen and (max-width: 800px) {
-        .foods ul li {
+        .foods ul li, .archives ul li {
           flex-direction: column; } }
-      .foods ul li .foodsub {
+      .foods ul li .foodsub, .archives ul li .foodsub {
         border-left: 1px solid #eee;
         display: flex;
         align-items: center;
         padding: 0 10px; }
-        .foods ul li .foodsub img {
+        .foods ul li .foodsub img, .archives ul li .foodsub img {
           height: 75px;
           width: 85px;
           margin-left: -10px; }
-        .foods ul li .foodsub label {
+        .foods ul li .foodsub label, .archives ul li .foodsub label {
           display: block;
           font-size: 0.8em;
           color: #ccc;
           text-transform: uppercase;
           margin: 5px; }
-        .foods ul li .foodsub h2 {
+        .foods ul li .foodsub h2, .archives ul li .foodsub h2 {
           font-size: 1.3em;
           margin: 0 0 0 10px;
           text-transform: capitalize;
@@ -341,5 +341,7 @@ nav {
 /* ============ NUTRITION TRACKER STYLING =========== */
 .nutritiontrack {
   flex: 1; }
+
+/* ======= ARCHIVE STYLING === */
 
 /*# sourceMappingURL=style.css.map */
