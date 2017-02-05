@@ -329,7 +329,7 @@ nav {
 
 /* ================== FOODSLIST STYLING ================ */
 
-.foods {
+.foods, .archives {
   user-select: none;
   ul {
     font-size: 0.8em;
@@ -444,4 +444,9 @@ nav {
 .nutritiontrack {
   @extend .dash-container;
   flex: 1;
+}
+
+/* ======= ARCHIVE STYLING === */
+.archives {
+  @extend .dash-container;
 }
