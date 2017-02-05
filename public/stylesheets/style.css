@@ -114,8 +114,9 @@ nav {
       max-height: 80px; }
 
 /* Home */
-.home nav {
-  position: fixed; }
+@media screen and (min-width: 800px) {
+  .home nav {
+    position: fixed; } }
 
 .home .container {
   min-height: 100vh;
@@ -123,9 +124,7 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
-  background-image: url("../images/1762.jpg");
-  background-size: cover; }
+  text-align: center; }
   @media screen and (max-width: 800px) {
     .home .container {
       min-height: 70vh; } }
@@ -149,6 +148,11 @@ nav {
       background-color: #0E38B1;
       transition: 0.2s all; }
 
+.home .wrapper {
+  background-image: url("../images/1762.jpg");
+  background-size: cover;
+  background-position: center center; }
+
 /* Login */
 .welcmsg {
   text-align: center;
@@ -158,39 +162,76 @@ nav {
     font-size: 3em; }
 
 /* dashboard */
+.user {
+  background-color: #f9f8f6; }
+
 .top h1 {
   font-size: 3em;
   font-family: "leitura-news", georgia, sans-serif; }
 
-.todaysmeals {
-  margin: 20px 0; }
-  .todaysmeals ul {
-    display: flex;
-    margin: 15px 0; }
-    @media screen and (max-width: 800px) {
-      .todaysmeals ul {
-        flex-direction: column;
-        max-height: 300px;
-        overflow-x: auto;
-        border: 3px solid #EBE8E1;
-        padding: 15px; } }
-    .todaysmeals ul li {
-      border: 1px solid #ddd;
-      padding: 20px;
-      margin: 5px;
-      flex: 1; }
-      .todaysmeals ul li h3 {
-        font-family: "alternate-gothic-no-2-d", impact, sans-serif;
-        font-size: 1.8em; }
-      .todaysmeals ul li p {
-        padding: 20px 0; }
-      .todaysmeals ul li .time {
-        background-color: #0E38B1;
-        color: white;
-        font-size: 0.8em;
-        text-transform: uppercase;
-        padding: 3px 5px;
-        border-radius: 10px; }
+.dash-container, .todaysmeals, .tbbr, .nutritiontrack {
+  background-color: white;
+  margin: 20px 15px;
+  padding: 50px;
+  border-radius: 5px; }
+
+.todaysmeals ul {
+  display: flex;
+  margin: 15px 0; }
+  @media screen and (max-width: 800px) {
+    .todaysmeals ul {
+      flex-direction: column;
+      max-height: 300px;
+      overflow-x: auto;
+      border: 1px solid #eee;
+      padding: 15px; } }
+  .todaysmeals ul li {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 5px;
+    flex: 1; }
+    .todaysmeals ul li h3 {
+      font-family: "alternate-gothic-no-2-d", impact, sans-serif;
+      font-size: 1.8em; }
+    .todaysmeals ul li p {
+      padding: 20px 0; }
+    .todaysmeals ul li .time {
+      background-color: #0E38B1;
+      color: white;
+      font-size: 0.8em;
+      text-transform: uppercase;
+      padding: 3px 5px;
+      border-radius: 10px; }
+
+.tabntr {
+  display: flex; }
+  @media screen and (max-width: 1200px) {
+    .tabntr {
+      flex-direction: column; } }
+
+.tbbr {
+  flex: 3; }
+
+.tabnav {
+  margin: 0 0 15px 0; }
+  .tabnav ul {
+    display: flex; }
+    .tabnav ul li {
+      flex: 1;
+      text-align: center;
+      padding: 0 0 15px;
+      border-bottom: 3px solid #ddd;
+      cursor: pointer;
+      font-family: "alternate-gothic-no-2-d", impact, sans-serif;
+      font-size: 2rem; }
+    .tabnav ul li.actv {
+      border-bottom: 3px solid #32B67A; }
+
+#tabcontent .tabcont {
+  display: none; }
+
+#tabcontent .actv {
+  display: block; }
 
 .foods {
   user-select: none; }
@@ -200,6 +241,9 @@ nav {
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
     border-right: 1px solid #eee; }
+    @media screen and (max-width: 800px) {
+      .foods ul li {
+        flex-direction: column; } }
     .foods ul li .foodsub {
       border-left: 1px solid #eee;
       display: flex;
@@ -207,7 +251,8 @@ nav {
       padding: 0 10px; }
       .foods ul li .foodsub img {
         height: 104px;
-        width: 150px; }
+        width: 150px;
+        margin-left: -10px; }
       .foods ul li .foodsub label {
         display: block;
         font-size: 0.8rem;
@@ -276,5 +321,8 @@ nav {
 .third .neutral {
   color: #F0CF61;
   border-bottom: 1px dotted #F0CF61; }
+
+.nutritiontrack {
+  flex: 1; }
 
 /*# sourceMappingURL=style.css.map */

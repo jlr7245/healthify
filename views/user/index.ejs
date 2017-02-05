@@ -1,9 +1,11 @@
 <% include ../partials/header %>
 <div class='container'>
+  
   <div class='top'>
     <h1>Welcome back, <%= user.fullName %>.</h1>
     <a class='btn' href='/auth/logout'>Log out</a>
   </div>
+  
   <div class='todaysmeals'>
     <h4>Today's Meals</h4>
     <ul>
@@ -29,22 +31,47 @@
       </li>
     </ul>
   </div>
-  <div class='foods'>
-    <ul>
-    <% if (foods.length !== 0) { %>
-     <% foods.forEach((food) => { %>
-       <li>
-        <% include ../partials/fooditem %>
-       </li>
-      <% }); %>
-    <% } else { %>
-      <p>You haven't added any foods yet!</p>
-      <a class='btn' href='/foods'>Add Foods</a>
-      <% } %>
-    </ul>
+  
+  <div class='tabntr'>
+    
+    <div id='tabs' class='tbbr'>
+      <div class='tabnav'>
+        <ul>
+          <li class='tablink actv'>Pantry</li>
+          <li class='tablink'>Weekly Meals</li>
+        </ul>
+      </div>
+      
+      <div id='tabcontent'>
+        <div class='foods actv tabcont'>
+          <ul>
+          <% if (foods.length !== 0) { %>
+           <% foods.forEach((food) => { %>
+             <li>
+              <% include ../partials/fooditem %>
+             </li>
+            <% }); %>
+          <% } else { %>
+            <p>You haven't added any foods yet!</p>
+            <a class='btn' href='/foods'>Add Foods</a>
+            <% } %>
+          </ul>
+        </div>
+        <div class='meals tabcont'>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class='nutritiontrack'>
+      Weekly nutrition chart goes here
+    </div>
+  
   </div>
+  
 </div>
 
+<script src='/javascripts/dashtabs.js'></script>
 <% include ../partials/footer %>
 
 

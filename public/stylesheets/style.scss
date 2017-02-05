@@ -155,43 +155,49 @@ nav {
 
 /* Home */
 
-.home nav {
-  position: fixed;
-}
-
-.home .container {
-  min-height: 100vh;
-  padding: 0 150px;
-  @media screen and (max-width: 800px) {
-    min-height: 70vh;
-  }
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  background-image: url('../images/1762.jpg');
-  background-size:cover;
-  h1 {
-    color: white;
-    font-size: 4em;
-    font-family: $ltn;
-  }
-  .hm {
-    display: inline-block;
-    text-decoration:none;
-    padding: 5px 20px;
-    margin: 50px 15px;
-    font-size: 2em;
-    border: 5px solid $accent;
-    border-radius: 10px;
-    background-color: rgba($brand, 0.8);
-    transition: 0.2s all;
-    color: white;
-    cursor: pointer;
-    &:hover {
-      background-color: $brand2;
-      transition: 0.2s all;
+.home {
+  nav {
+    @media screen and (min-width: 800px) {
+      position: fixed;
     }
+  }
+  .container {
+    min-height: 100vh;
+    padding: 0 150px;
+    @media screen and (max-width: 800px) {
+      min-height: 70vh;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    h1 {
+      color: white;
+      font-size: 4em;
+      font-family: $ltn;
+    }
+    .hm {
+      display: inline-block;
+      text-decoration:none;
+      padding: 5px 20px;
+      margin: 50px 15px;
+      font-size: 2em;
+      border: 5px solid $accent;
+      border-radius: 10px;
+      background-color: rgba($brand, 0.8);
+      transition: 0.2s all;
+      color: white;
+      cursor: pointer;
+      &:hover {
+        background-color: $brand2;
+        transition: 0.2s all;
+      }
+    }
+  }
+  .wrapper {
+    background-image: url('../images/1762.jpg');
+    background-size: cover;
+    background-position: center center;
   }
 }
 
@@ -206,6 +212,10 @@ nav {
 }
 
 /* dashboard */
+
+.user {
+  background-color: lighten($accent-light, 7);
+}
 .top {
   h1 {
     font-size: 3em;
@@ -217,8 +227,15 @@ nav {
   
 }
 
+.dash-container {
+  background-color: white;
+  margin: 20px 15px;
+  padding: 50px;
+  border-radius: 5px;
+}
+
 .todaysmeals {
-  margin: 20px 0;
+  @extend .dash-container; 
   ul {
     display: flex;
     margin: 15px 0;
@@ -226,7 +243,7 @@ nav {
       flex-direction: column;
       max-height: 300px;
       overflow-x: auto;
-      border: 3px solid $accent-light;
+      border: $pencilbrdr;
       padding: 15px;
     }
     li {
@@ -253,6 +270,46 @@ nav {
   }
 }
 
+.tabntr {
+  display: flex;
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+  }
+}
+
+.tbbr {
+  @extend .dash-container;
+  flex: 3;
+}
+
+.tabnav {
+  margin: 0 0 15px 0;
+  ul {
+    display: flex;
+    li {
+      flex: 1;
+      text-align: center;
+      padding: 0 0 15px;
+      border-bottom: 3px solid #ddd;
+      cursor: pointer;
+      font-family: $altg;
+      font-size: 2rem;
+    }
+    li.actv {
+      border-bottom: 3px solid $brand;
+    }
+  }
+}
+
+#tabcontent {
+  .tabcont {
+    display: none;
+  }
+  .actv {
+    display: block;
+  }
+}
+
 
 
 .foods {
@@ -260,6 +317,9 @@ nav {
   ul {
     li {
       display: flex;
+      @media screen and (max-width: 800px) {
+        flex-direction: column;
+      }
       margin: 5px;
       border-top: $pencilbrdr;
       border-bottom: $pencilbrdr;
@@ -268,6 +328,7 @@ nav {
         img {
           height: 104px;
           width: 150px;
+          margin-left: -10px;
         }
         border-left: $pencilbrdr;
         display: flex;
@@ -355,4 +416,9 @@ nav {
     color: $accent;
     border-bottom: 1px dotted $accent;
   }
+}
+
+.nutritiontrack {
+  @extend .dash-container;
+  flex: 1;
 }
