@@ -10,6 +10,8 @@ $bgr: "brandon-grotesque", helvetica, sans-serif;
 $altg: "alternate-gothic-no-2-d", impact, sans-serif;
 $ltn: "leitura-news", georgia, sans-serif;
 
+$pencilbrdr: 1px solid #eee;
+
 
 /* Body */
 body {
@@ -251,14 +253,17 @@ nav {
   }
 }
 
-$pencilbrdr: 1px solid #eee;
+
 
 .foods {
+  user-select: none;
   ul {
     li {
       display: flex;
-      margin: 10px;
-      
+      margin: 5px;
+      border-top: $pencilbrdr;
+      border-bottom: $pencilbrdr;
+      border-right: $pencilbrdr;
       .foodsub {
         img {
           height: 104px;
@@ -278,6 +283,8 @@ $pencilbrdr: 1px solid #eee;
         h2 {
           font-size: 1.3em;
           margin: 0 0 0 10px;
+          text-transform: capitalize;
+          font-family: $ltn;
         }
       }
     }
@@ -300,35 +307,35 @@ $pencilbrdr: 1px solid #eee;
 
 .third {
   .warn, .good, .neutral {
+    cursor: pointer;
+    margin: 2px 0;
     position: relative;
     .tooltip {
       visibility: hidden;
-      width: 120px;
+      min-width: 60px;
       background-color: #555;
       color: #fff;
       text-align: center;
       padding: 5px 0;
       border-radius: 6px;
-
       /* Position the tooltip text */
       position: absolute;
       z-index: 1;
-      bottom: 125%;
-      left: 50%;
-      margin-left: -60px;
-
+      bottom: -25%;
+      left: 20%;
+      margin-left: 60px;
       /* Fade in tooltip */
       opacity: 0;
       transition: opacity 1s;
       &:after {
         content: "";
         position: absolute;
-        top: 100%;
-        left: 50%;
-        margin-left: -5px;
+        top: 50%;
+        right: 100%;
+        margin-top: -5px;
         border-width: 5px;
         border-style: solid;
-        border-color: #555 transparent transparent transparent;
+        border-color: transparent #555 transparent transparent;
       }
     }
     &:hover .tooltip {
@@ -338,11 +345,14 @@ $pencilbrdr: 1px solid #eee;
   }
   .warn {
     color: $warn;
+    border-bottom: 1px dotted $warn;
   }
   .good {
     color: $brand;
+    border-bottom: 1px dotted $brand;
   }
   .neutral {
     color: $accent;
+    border-bottom: 1px dotted $accent;
   }
 }
