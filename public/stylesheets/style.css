@@ -175,6 +175,10 @@ nav {
   padding: 50px;
   border-radius: 5px; }
 
+.todaysmeals h4 {
+  font-family: "alternate-gothic-no-2-d", impact, sans-serif;
+  font-size: 2em; }
+
 .todaysmeals ul {
   display: flex;
   margin: 15px 0; }
@@ -191,8 +195,8 @@ nav {
     margin: 5px;
     flex: 1; }
     .todaysmeals ul li h3 {
-      font-family: "alternate-gothic-no-2-d", impact, sans-serif;
-      font-size: 1.8em; }
+      font-family: "leitura-news", georgia, sans-serif;
+      font-size: 1.3em; }
     .todaysmeals ul li p {
       padding: 20px 0; }
     .todaysmeals ul li .time {
@@ -251,7 +255,7 @@ nav {
       padding: 0 10px; }
       .foods ul li .foodsub img {
         height: 104px;
-        width: 150px;
+        width: 120px;
         margin-left: -10px; }
       .foods ul li .foodsub label {
         display: block;
@@ -266,9 +270,12 @@ nav {
         font-family: "leitura-news", georgia, sans-serif; }
 
 .first {
+  flex: 4; }
+
+.second, .third {
   flex: 2; }
 
-.second, .third, .fourth {
+.fourth {
   flex: 1; }
 
 .fourth, .third {

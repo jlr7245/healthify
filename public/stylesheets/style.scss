@@ -236,6 +236,10 @@ nav {
 
 .todaysmeals {
   @extend .dash-container; 
+  h4 {
+    font-family: $altg;
+    font-size: 2em;
+  }
   ul {
     display: flex;
     margin: 15px 0;
@@ -252,8 +256,8 @@ nav {
       margin: 5px;
       flex: 1;
       h3 {
-        font-family: $altg;
-        font-size: 1.8em;
+        font-family: $ltn;
+        font-size: 1.3em;
       }
       p {
         padding: 20px 0;
@@ -327,7 +331,7 @@ nav {
       .foodsub {
         img {
           height: 104px;
-          width: 150px;
+          width: 120px;
           margin-left: -10px;
         }
         border-left: $pencilbrdr;
@@ -353,10 +357,14 @@ nav {
 }
 
 .first {
+  flex: 4;
+}
+
+.second, .third {
   flex: 2;
 }
 
-.second, .third, .fourth {
+.fourth {
   flex: 1;
 }
 
