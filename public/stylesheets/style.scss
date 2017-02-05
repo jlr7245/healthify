@@ -45,6 +45,9 @@ footer {
   }
 }
 
+
+/* ====================== FORM */
+
 input[type=text], input[type=password], textarea {
   border-bottom: 3px solid $brand;
   font-size: 1.5em;
@@ -97,7 +100,7 @@ form {
   }
 }
 
-/* Nav */
+/* ================= NAVIGATION */
 
 nav {
   display: flex;
@@ -153,7 +156,7 @@ nav {
   }
 }
 
-/* Home */
+/* ========================= HOME */
 
 .home {
   nav {
@@ -201,7 +204,7 @@ nav {
   }
 }
 
-/* Login */
+/* =================== LOGIN */
 .welcmsg {
   text-align: center;
   margin: 20px 0 70px 0;
@@ -211,7 +214,7 @@ nav {
   }
 }
 
-/* dashboard */
+/* ===================== DASHBOARD */
 
 .user {
   background-color: lighten($accent-light, 7);
@@ -233,6 +236,8 @@ nav {
   padding: 50px;
   border-radius: 5px;
 }
+
+/* ============ TODAYS MEALS ============ */
 
 .todaysmeals {
   @extend .dash-container; 
@@ -274,6 +279,8 @@ nav {
   }
 }
 
+/* ============= SET UP FOR TABS ============= */
+
 .tabntr {
   display: flex;
   @media screen and (max-width: 1200px) {
@@ -297,7 +304,12 @@ nav {
       border-bottom: 3px solid #ddd;
       cursor: pointer;
       font-family: $altg;
-      font-size: 2rem;
+      font-size: 2em;
+      img {
+        max-height: 1.5em;
+        vertical-align:middle;
+        margin: 0 10px;
+      }
     }
     li.actv {
       border-bottom: 3px solid $brand;
@@ -315,10 +327,12 @@ nav {
 }
 
 
+/* ================== FOODSLIST STYLING ================ */
 
 .foods {
   user-select: none;
   ul {
+    font-size: 0.8em;
     li {
       display: flex;
       @media screen and (max-width: 800px) {
@@ -330,8 +344,8 @@ nav {
       border-right: $pencilbrdr;
       .foodsub {
         img {
-          height: 104px;
-          width: 120px;
+          height: 75px;
+          width: 85px;
           margin-left: -10px;
         }
         border-left: $pencilbrdr;
@@ -340,7 +354,7 @@ nav {
         padding: 0 10px;
         label {
           display: block;
-          font-size: 0.8rem;
+          font-size: 0.8em;
           color: #ccc;
           text-transform: uppercase;
           margin: 5px;
@@ -379,21 +393,20 @@ nav {
     cursor: pointer;
     margin: 2px 0;
     position: relative;
+    /* ========= TOOLTIPS */
     .tooltip {
-      visibility: hidden;
+      display: none;
       min-width: 60px;
       background-color: #555;
       color: #fff;
       text-align: center;
       padding: 5px 0;
       border-radius: 6px;
-      /* Position the tooltip text */
       position: absolute;
       z-index: 1;
       bottom: -25%;
       left: 20%;
       margin-left: 60px;
-      /* Fade in tooltip */
       opacity: 0;
       transition: opacity 1s;
       &:after {
@@ -408,7 +421,7 @@ nav {
       }
     }
     &:hover .tooltip {
-      visibility: visible;
+      display: block;
       opacity: 1;
     }
   }
@@ -426,6 +439,8 @@ nav {
   }
 }
 
+
+/* ============ NUTRITION TRACKER STYLING =========== */
 .nutritiontrack {
   @extend .dash-container;
   flex: 1;

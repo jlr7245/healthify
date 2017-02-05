@@ -15,7 +15,6 @@
         tabNav.forEach((nav) => {
           nav.addEventListener('click', (e) => {
             e.preventDefault();
-            console.log('click', tabNav.indexOf(nav));
             goToTab(tabNav.indexOf(nav));
           });
         });
