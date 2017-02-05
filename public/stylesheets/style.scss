@@ -96,6 +96,19 @@ form {
     div {
       margin: 15px;
       flex: 1;
+      display: flex;
+    }
+  }
+  
+  select {
+    font-size: 1.5em;
+    font-family: $altg;
+    flex: 1;
+    padding: 0 25px;
+    
+    option {
+      font-size: 1rem;
+      font-family: $altg;
     }
   }
 }
@@ -244,6 +257,10 @@ nav {
   h4 {
     font-family: $altg;
     font-size: 2em;
+    img {
+      max-height: 3rem;
+      vertical-align: middle;
+    }
   }
   ul {
     display: flex;

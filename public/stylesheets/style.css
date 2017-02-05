@@ -68,7 +68,16 @@ form {
     text-align: left; }
     form .fields div {
       margin: 15px;
-      flex: 1; }
+      flex: 1;
+      display: flex; }
+  form select {
+    font-size: 1.5em;
+    font-family: "alternate-gothic-no-2-d", impact, sans-serif;
+    flex: 1;
+    padding: 0 25px; }
+    form select option {
+      font-size: 1rem;
+      font-family: "alternate-gothic-no-2-d", impact, sans-serif; }
 
 /* ================= NAVIGATION */
 nav {
@@ -180,6 +189,9 @@ nav {
 .todaysmeals h4 {
   font-family: "alternate-gothic-no-2-d", impact, sans-serif;
   font-size: 2em; }
+  .todaysmeals h4 img {
+    max-height: 3rem;
+    vertical-align: middle; }
 
 .todaysmeals ul {
   display: flex;
