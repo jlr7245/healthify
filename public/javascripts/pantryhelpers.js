@@ -70,4 +70,4 @@ function changeTracker() {
 
 
 changeTracker();
-document.addEventListener('click', () => changeTracker());
+document.addEventListener('click', () => changeTracker()); // this is the least elegant way to do this possible but couldn't figure out how else

@@ -42,7 +42,8 @@ function postFoodsIntoDatabase(req,res,next) {
       totalFat: food.nf_total_fat,
       sodium: food.nf_sodium,
       imageURL: food.photo.highres,
-      belongsTo: req.user.dataValues.id
+      belongsTo: req.user.dataValues.id,
+      updated: false
     });
   });
   return next();
