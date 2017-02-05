@@ -37,7 +37,6 @@
         <div class='foodsub first'>
           <img src="<%= food.imageURL %>">
           <h2 class='foodname'>
-            <label>Name</label>
             <%= food.name %>
           </h2>
         </div>
@@ -45,7 +44,7 @@
           <h3><label>Added on</label><%= moment(food.createdAt).format("dddd, hA") %></h3>
         </div>
         <div class='foodsub third'>
-          <span class='warn'><i class='fa fa-times-circle'></i> Protein <span class='tooltip'><%= food.protein %>g protein</span></span>
+          <span class='warn'><i class='fa fa-times-circle'></i> Protein <span class='tooltip'><%= food.protein %>g</span></span>
           <span class='good'><i class='fa fa-check-circle'></i> Sodium <span class='tooltip'><%= food.sodium %>g</span></span>
           <span class='neutral'><i class='fa fa-circle'></i> Carbs <span class='tooltip'><%= food.carbohydrates %>g</span></span>
         </div>
