@@ -16,11 +16,6 @@ router.get('/:userid/new', function(req, res, next) {
   res.render('foods/new', { title: 'new food', currentRoute: 'addfoods'});
 });
 
-
-router.get('/facebookUser', (req, res, next) => {
-  res.render('auth/foodform', {title: 'add foods', currentRoute: 'registration', user: response.name});
-});
-
 //fetches all foods entered, from database
 /*router.get('/', function(req, res, next) {
   models.Foods.findAll({}).then(function(foods) {
