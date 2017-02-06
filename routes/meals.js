@@ -19,15 +19,21 @@ router.post('/:id', dashHelpers.getFoodInfo, dashHelpers.createMealData, (req, r
 });
 
 /* deleting a meal */
+router.delete('/delete/:id', (req,res,next) => {
+  models.UserMeals.destroy({
+    where: { id: req.params.id }
+  }).then((meal) => res.redirect('/user'));
+});
 
 /* editing a meal */
 router.get('/:id', authHelpers.loginRequired, dashHelpers.getMeal, (req,res,next) => {
-  res.render('meals/edit', {title: 'edit meal', currentRoute: 'meals', meal: res.locals.mealEdited});
-})
+  res.render('meals/edit', {title: 'edit meal', currentRoute: 'meals', meal: res.locals.mealEdited, user:req.user});
+});
 
 router.patch('/:id/:mealid', dashHelpers.getFoodInfo, dashHelpers.createMealData, (req,res,next) => {
   models.UserMeals.update(res.locals.theMeal, { where: { id: req.params.mealid } });
   res.redirect('/user');
 });
+
 
 module.exports = router;

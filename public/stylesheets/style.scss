@@ -46,25 +46,49 @@ footer {
 }
 
 
-/* ====================== FORM */
+/*=============== edit & delete buttons */
 
-input[type=text], input[type=password], textarea {
-  border-bottom: 3px solid $brand;
-  font-size: 1.5em;
-  display: block;
-  margin: 20px 0;
-  padding: 5px;
-  font-family: $altg;
-  width: 100%;
-  transition: 0.2s all;
-  &:focus {
-    border-color: $accent;
+.iconclick {
+  cursor: pointer;
+    color: #ccc;
     transition: 0.2s all;
-    outline:0;
-  }
+    &:hover {
+      color: $brand;
+      transition: 0.2s all;
+    }
 }
 
-form {
+.single {
+  display: inline-block;
+  button {
+    cursor: pointer;
+    color: #ccc;
+    transition: 0.2s all;
+    &:hover {
+      color: $warn;
+      transition: 0.2s all;
+    }
+  }
+  
+}
+
+/* ====================== FORM */
+.full {
+  input[type=text], input[type=password], textarea {
+    border-bottom: 3px solid $brand;
+    font-size: 1.5em;
+    display: block;
+    margin: 20px 0;
+    padding: 5px;
+    font-family: $altg;
+    width: 100%;
+    transition: 0.2s all;
+    &:focus {
+      border-color: $accent;
+      transition: 0.2s all;
+      outline:0;
+    }
+  }
   width: 50vw;
   border: 1px solid #eee;
   padding: 50px;
@@ -96,6 +120,7 @@ form {
     div {
       margin: 15px;
       flex: 1;
+      flex-direction: column;
       display: flex;
     }
   }

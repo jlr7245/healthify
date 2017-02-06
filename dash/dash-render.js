@@ -12,7 +12,7 @@ function renderFoods(req,res,next) {
 }
 
 function renderMeals(req,res,next) {
-  models.sequelize.query('SELECT "UserMeals".* FROM "UserMeals" JOIN "Users" ON "Users"."id" = "UserMeals"."belongsTo" WHERE "Users"."id" = :id', {
+  models.sequelize.query('SELECT "UserMeals".* FROM "UserMeals" JOIN "Users" ON "Users"."id" = "UserMeals"."belongsTo" WHERE "Users"."id" = :id ORDER BY "UserMeals"."id" ASC', {
     replacements: { id: req.user.id }, /// replaces :id in the query
     type: models.sequelize.QueryTypes.SELECT // don't need metadata in the response
   }).then((meals) => {
@@ -81,11 +81,11 @@ function createMealData(req,res,next) {
 
 function getMeal(req,res,next) {
   models.UserMeals.findById(req.params.id).then((meal) => {
-    if (meal.belongsTo !== req.user.id) {
+    if (meal.dataValues.belongsTo !== req.user.id) {
       res.redirect('/user');
-    } else {
-      res.locals.mealEdited = meal;
     }
+    res.locals.mealEdited = meal;
+    return next();
   });
 }
 

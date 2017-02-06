@@ -1,0 +1,10 @@
+<% include ../partials/header %>
+<div class='container'>
+  <form class='full' action='<%= `/meals/${user.id}/${meal.id}?_method=PATCH` %>' method='POST'>
+    <h3><%= meal.whichMeal %></h3>
+    <input type='text' name='foodName' value='<%= meal.ingredients%>'/>
+    <input type='text' name='comments' value='<%= meal.comments%>' />
+    <input type='submit' value='Save Changes' />
+  </form>
+</div>
+<% include ../partials/footer %>
