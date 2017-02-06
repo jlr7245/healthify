@@ -26,7 +26,6 @@ function getFoodInfo(req,res,next) {
     query: `${req.body.foodName}`,
     timezone: 'US/Eastern'
   }).then((theResult) => {
-    console.log(theResult.data);
     res.locals.foodData = theResult.data.foods;
     return next();
   }).catch((err) => console.log(err));
@@ -50,7 +49,7 @@ function postFoodsIntoDatabase(req,res,next) {
   return next();
 }
 
-function postMeal(req,res,next) {
+function createMealData(req,res,next) {
   let totalCalories = 0;
   let totalProtein = 0;
   let totalCarbs = 0;
@@ -65,8 +64,7 @@ function postMeal(req,res,next) {
     totalSodium += parseInt(food.nf_sodium);
     totalFiber += parseInt(food.nf_dietary_fiber);
   });
-  console.log(totalCalories, totalProtein, totalCarbs);
-  models.UserMeals.create({
+  res.locals.theMeal = {
     ingredients: req.body.foodName,
     comments: req.body.comments,
     whichMeal: req.body.whichmeal,
@@ -77,14 +75,26 @@ function postMeal(req,res,next) {
     totalFiber: totalFiber,
     totalSodium: totalSodium,
     totalFat: totalFat
-  });
+  };
   return next();
+}
+
+function getMeal(req,res,next) {
+  models.UserMeals.findById(req.params.id).then((meal) => {
+    if (meal.belongsTo !== req.user.id) {
+      res.redirect('/user');
+    } else {
+      res.locals.mealEdited = meal;
+    }
+  });
 }
 
 module.exports = {
   renderFoods,
   getFoodInfo,
   postFoodsIntoDatabase,
-  postMeal,
-  renderMeals
+  createMealData,
+  renderMeals,
+  getMeal
 };
+

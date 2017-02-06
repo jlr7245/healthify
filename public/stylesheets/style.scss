@@ -279,8 +279,17 @@ nav {
       border: 1px solid #ddd;
       margin: 5px;
       flex: 1;
-      min-width: 350px;
-      max-width: 550px;
+      @media screen and (max-width: 800px) {
+        display: block;
+      }
+      @media screen and (min-width: 800px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      @media screen and (min-width: 1090px) {
+        max-width: 32%;
+      }
       .info {
         padding: 20px;
       }
@@ -385,6 +394,8 @@ nav {
 }
 
 #tabcontent {
+  max-height: 500px;
+  overflow-x: auto;
   .tabcont {
     display: none;
   }
@@ -506,6 +517,25 @@ nav {
   }
 }
 
+#archive {
+  img {
+    display: none;
+  }
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction: column;
+  @media screen and (min-width: 1000px) {
+    flex-direction: row;
+  }
+  li {
+    @media screen and (min-width: 800px) {
+      min-width: 48%;
+    }
+  }
+  .fourth {
+    display: none;
+  }
+}
 
 /* ============ NUTRITION TRACKER STYLING =========== */
 .nutritiontrack {
