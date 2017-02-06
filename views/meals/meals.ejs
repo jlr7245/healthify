@@ -1,0 +1,23 @@
+<% include ../partials/header %>
+
+<div class='container'>
+  <form class='full' method='POST' action="<%= `/meals/${user.id}` %>" >
+    <input type='text' name='foodName' placeholder='Ingredients' />
+    <div class='fields'>
+      <div>
+        <input type='text' name='comments' placeholder='Your Comments'/>
+      </div>
+      <div>
+        <select name='whichmeal'>
+          <option value="breakfast">Breakfast</option>
+          <option value="lunch">Lunch</option>
+          <option value="supper">Supper</option>
+          <option value="snack">Snack</option>
+        </select>
+      </div>
+    </div>
+    <input type='submit' value='Add it!' />
+  </form>
+</div>
+
+<% include ../partials/footer %>

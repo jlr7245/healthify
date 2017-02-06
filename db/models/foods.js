@@ -17,7 +17,8 @@ module.exports = function(sequelize, DataTypes) {
     vitaminB6: DataTypes.DECIMAL,
     belongsTo: DataTypes.INTEGER,
     imageURL: DataTypes.STRING,
-    fiber: DataTypes.DECIMAL
+    fiber: DataTypes.DECIMAL,
+    updated: DataTypes.BOOLEAN
   }, {
     classMethods: {
       associate: function(models) {

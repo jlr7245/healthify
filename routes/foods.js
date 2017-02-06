@@ -11,6 +11,7 @@ router.get('/', authHelpers.loginRequired, (req,res,next) => {
  res.render('auth/foodform', {title: 'add foods', currentRoute: 'registration', user: req.user});
 });
 
+<<<<<<< HEAD
 
 router.get('/:userid/new', function(req, res, next) {
   res.render('foods/new', { title: 'new food', currentRoute: 'addfoods'});
@@ -26,17 +27,25 @@ router.get('/:userid/new', function(req, res, next) {
   });
 });*/
 
+=======
+>>>>>>> 45ed0a09a5dc10c445747058648a7ab8a1358b81
 //Posts data from input form to database
 router.post('/:id', dashHelpers.getFoodInfo, dashHelpers.postFoodsIntoDatabase, function(req, res, next) {
     res.redirect('/user');
+});
+
+//Archives foods
+
+router.patch('/archive/:id', (req,res,next) => {
+  models.Foods.update({
+    updated: true
+  }, { where: { id: req.params.id } } );
 });
 
 //route to specify what happens on press of delete submit button
 router.delete('/:id', function(req, res, next) {
   models.Foods.destroy({
     where: { id: req.params.id }
-  }).then(function(food) {
-    res.redirect('/foods');
   });
 });
 
@@ -55,14 +64,8 @@ router.get('/:id/:userid/edit', function(req, res, next) {
   });
 });
 
-//this function handles what happens on submit of editing food information
-router.put('/:id/:userid', function(req, res, next) {
-  models.Foods.update({
-  name:req.body.foodName
-  }, { where: { id: req.params.id } }).then(function() {
-    res.redirect('/foods/');
-  });
-});
+
+
 
 
 module.exports = router;

@@ -1,6 +1,6 @@
 <% include ../partials/header %>
 <div class='container'>
-  <form method='POST' action="<%= `/foods/${user.id}` %>" >
+  <form class='full' method='POST' action="<%= `/foods/${user.id}` %>" >
     <textarea name='foodName' type='text' placeholder='Please enter a list of foods. Feel free to get specific!' required></textarea>
     <input type='submit' value='Add your foods!'/>
   </form>

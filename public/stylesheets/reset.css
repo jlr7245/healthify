@@ -68,10 +68,23 @@ button, input, textarea {
 }
 input::-moz-focus-inner,
 button::-moz-focus-inner,
-textarea::-moz-focus-inner {
+textarea::-moz-focus-inner,
+select::-moz-focus-inner {
     border: 0;
     padding: 0;
 }
-button:focus, input:focus, textarea:focus, a:focus {
+button:focus, input:focus, textarea:focus, a:focus, select:focus {
   outline:none;
+}
+
+/* select fields */
+
+select {
+      border: 0 !important;  
+      -webkit-appearance: none;  
+      -moz-appearance: none; 
+}
+
+select option {
+  text-align: center;
 }

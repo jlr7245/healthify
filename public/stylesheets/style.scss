@@ -13,7 +13,7 @@ $ltn: "leitura-news", georgia, sans-serif;
 $pencilbrdr: 1px solid #eee;
 
 
-/* Body */
+/* ============= Body */
 body {
   font-family: $bgr;
 }
@@ -46,25 +46,49 @@ footer {
 }
 
 
-/* ====================== FORM */
+/*=============== edit & delete buttons */
 
-input[type=text], input[type=password], textarea {
-  border-bottom: 3px solid $brand;
-  font-size: 1.5em;
-  display: block;
-  margin: 20px 0;
-  padding: 5px;
-  font-family: $altg;
-  width: 100%;
-  transition: 0.2s all;
-  &:focus {
-    border-color: $accent;
+.iconclick {
+  cursor: pointer;
+    color: #ccc;
     transition: 0.2s all;
-    outline:0;
-  }
+    &:hover {
+      color: $brand;
+      transition: 0.2s all;
+    }
 }
 
-form {
+.single {
+  display: inline-block;
+  button {
+    cursor: pointer;
+    color: #ccc;
+    transition: 0.2s all;
+    &:hover {
+      color: $warn;
+      transition: 0.2s all;
+    }
+  }
+  
+}
+
+/* ====================== FORM */
+.full {
+  input[type=text], input[type=password], textarea {
+    border-bottom: 3px solid $brand;
+    font-size: 1.5em;
+    display: block;
+    margin: 20px 0;
+    padding: 5px;
+    font-family: $altg;
+    width: 100%;
+    transition: 0.2s all;
+    &:focus {
+      border-color: $accent;
+      transition: 0.2s all;
+      outline:0;
+    }
+  }
   width: 50vw;
   border: 1px solid #eee;
   padding: 50px;
@@ -96,6 +120,20 @@ form {
     div {
       margin: 15px;
       flex: 1;
+      flex-direction: column;
+      display: flex;
+    }
+  }
+  
+  select {
+    font-size: 1.5em;
+    font-family: $altg;
+    flex: 1;
+    padding: 0 25px;
+    
+    option {
+      font-size: 1rem;
+      font-family: $altg;
     }
   }
 }
@@ -244,36 +282,99 @@ nav {
   h4 {
     font-family: $altg;
     font-size: 2em;
+    img {
+      max-height: 3rem;
+      vertical-align: middle;
+    }
   }
   ul {
     display: flex;
     margin: 15px 0;
+    flex-wrap: wrap;
+    user-select: none;
     @media screen and (max-width: 800px) {
       flex-direction: column;
+      flex-wrap: nowrap;
       max-height: 300px;
-      overflow-x: auto;
+      overflow-y: auto;
       border: $pencilbrdr;
       padding: 15px;
     }
     li {
       border: 1px solid #ddd;
-      padding: 20px;
       margin: 5px;
       flex: 1;
+      @media screen and (max-width: 800px) {
+        display: block;
+      }
+      @media screen and (min-width: 800px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      @media screen and (min-width: 1090px) {
+        max-width: 32%;
+      }
+      .info {
+        padding: 20px;
+      }
       h3 {
         font-family: $ltn;
         font-size: 1.3em;
+        margin-bottom: 15px;
+        text-transform: capitalize;
       }
       p {
-        padding: 20px 0;
+        padding: 10px 0;
+      }
+      .ingredients {
+        color: #aaa;
+        font-size: 0.9rem;
+      }
+      .comments {
+        font-size: 1.1rem;
+      }
+      .nutrients {
+        @media screen and (min-width: 800px) {
+          height: 40px;
+        }
+        display: flex;
+        @media screen and (max-width: 500px) {
+          flex-direction: column;
+        }
+        div {
+          flex: 1;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          @media screen and (max-width: 500px) {
+            justify-content: center;
+          }
+          padding: 5px;
+          border-top: $pencilbrdr;
+          label {
+            font-size: 0.5rem;
+            text-transform: uppercase;
+            color: #aaa;
+            @media screen and (max-width: 500px) {
+              margin-right: 5px;
+            }
+          }
+        }
       }
       .time {
         background-color: $brand2;
+        font-family: $bgr;
+        letter-spacing: 1px;
         color: white;
-        font-size: 0.8em;
+        font-size: 0.8rem;
+        display: inline-block;
+        vertical-align: top;
         text-transform:uppercase;
         padding: 3px 5px;
         border-radius:10px;
+        margin: 0 3px;
       }
     }
   }
@@ -318,6 +419,8 @@ nav {
 }
 
 #tabcontent {
+  max-height: 500px;
+  overflow-x: auto;
   .tabcont {
     display: none;
   }
@@ -329,7 +432,7 @@ nav {
 
 /* ================== FOODSLIST STYLING ================ */
 
-.foods {
+.foods, .archives {
   user-select: none;
   ul {
     font-size: 0.8em;
@@ -425,23 +528,50 @@ nav {
       opacity: 1;
     }
   }
-  .warn {
-    color: $warn;
-    border-bottom: 1px dotted $warn;
-  }
-  .good {
-    color: $brand;
-    border-bottom: 1px dotted $brand;
-  }
-  .neutral {
-    color: $accent;
-    border-bottom: 1px dotted $accent;
-  }
 }
 
+#archive {
+  img {
+    display: none;
+  }
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction: column;
+  @media screen and (min-width: 1000px) {
+    flex-direction: row;
+  }
+  li {
+    @media screen and (min-width: 800px) {
+      min-width: 48%;
+    }
+  }
+  .fourth {
+    display: none;
+  }
+}
 
 /* ============ NUTRITION TRACKER STYLING =========== */
 .nutritiontrack {
   @extend .dash-container;
   flex: 1;
+}
+
+/* ======= ARCHIVE STYLING === */
+.archives {
+  @extend .dash-container;
+}
+
+/*==== WARN GOOD NEUTRAL ===== */
+
+.warn {
+  color: $warn;
+  border-bottom: 1px dotted $warn;
+}
+.good {
+  color: $brand;
+  border-bottom: 1px dotted $brand;
+}
+.neutral {
+  color: $accent;
+  border-bottom: 1px dotted $accent;
 }

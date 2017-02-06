@@ -7,12 +7,14 @@ const dashRenders = require('../dash/dash-render');
 const moment = require('moment');
 
 
+
 /* GET users listing. */
 
-router.get('/', authHelpers.loginRequired, dashRenders.renderFoods, (req,res,next) => {
+router.get('/', authHelpers.loginRequired, dashRenders.renderFoods, dashRenders.renderMeals, (req,res,next) => {
   res.render('user/index', {
     user: req.user.dataValues,
     foods: res.locals.foods,
+    meals: res.locals.meals,
     title: 'user',
     currentRoute: 'user',
     moment: moment
