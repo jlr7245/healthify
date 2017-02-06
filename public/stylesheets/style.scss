@@ -265,32 +265,82 @@ nav {
   ul {
     display: flex;
     margin: 15px 0;
+    flex-wrap: wrap;
+    user-select: none;
     @media screen and (max-width: 800px) {
       flex-direction: column;
+      flex-wrap: nowrap;
       max-height: 300px;
-      overflow-x: auto;
+      overflow-y: auto;
       border: $pencilbrdr;
       padding: 15px;
     }
     li {
       border: 1px solid #ddd;
-      padding: 20px;
       margin: 5px;
       flex: 1;
+      min-width: 350px;
+      max-width: 550px;
+      .info {
+        padding: 20px;
+      }
       h3 {
         font-family: $ltn;
         font-size: 1.3em;
+        margin-bottom: 15px;
+        text-transform: capitalize;
       }
       p {
-        padding: 20px 0;
+        padding: 10px 0;
+      }
+      .ingredients {
+        color: #aaa;
+        font-size: 0.9rem;
+      }
+      .comments {
+        font-size: 1.1rem;
+      }
+      .nutrients {
+        @media screen and (min-width: 800px) {
+          height: 40px;
+        }
+        display: flex;
+        @media screen and (max-width: 500px) {
+          flex-direction: column;
+        }
+        div {
+          flex: 1;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          @media screen and (max-width: 500px) {
+            justify-content: center;
+          }
+          padding: 5px;
+          border-top: $pencilbrdr;
+          label {
+            font-size: 0.5rem;
+            text-transform: uppercase;
+            color: #aaa;
+            @media screen and (max-width: 500px) {
+              margin-right: 5px;
+            }
+          }
+        }
       }
       .time {
         background-color: $brand2;
+        font-family: $bgr;
+        letter-spacing: 1px;
         color: white;
-        font-size: 0.8em;
+        font-size: 0.8rem;
+        display: inline-block;
+        vertical-align: top;
         text-transform:uppercase;
         padding: 3px 5px;
         border-radius:10px;
+        margin: 0 3px;
       }
     }
   }
