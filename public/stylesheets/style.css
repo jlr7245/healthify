@@ -217,6 +217,9 @@ nav {
   border-radius: 5px; }
 
 /* ============ TODAYS MEALS ============ */
+.todaysmeals .btn {
+  display: inline-block; }
+
 .todaysmeals h4 {
   font-family: "alternate-gothic-no-2-d", impact, sans-serif;
   font-size: 2em; }
