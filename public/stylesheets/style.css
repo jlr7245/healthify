@@ -194,9 +194,21 @@ nav {
 .user {
   background-color: #f9f8f6; }
 
-.top h1 {
-  font-size: 3em;
-  font-family: "leitura-news", georgia, sans-serif; }
+.top {
+  display: flex;
+  align-items: center; }
+  .top h1 {
+    font-size: 3em;
+    font-family: "leitura-news", georgia, sans-serif;
+    margin-right: 30px; }
+  .top .btn {
+    text-decoration: none;
+    margin: 0 10px;
+    color: white;
+    background-color: #F03F35;
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-size: 1.2rem; }
 
 .dash-container, .todaysmeals, .tbbr, .nutritiontrack, .archives {
   background-color: white;

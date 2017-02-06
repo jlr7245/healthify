@@ -258,15 +258,24 @@ nav {
   background-color: lighten($accent-light, 7);
 }
 .top {
+  display: flex;
+  align-items: center;
   h1 {
     font-size: 3em;
     font-family: $ltn;
+    margin-right: 30px;
+  }
+  .btn {
+    text-decoration: none;
+    margin: 0 10px;
+    color: white;
+    background-color: $warn;
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-size: 1.2rem;
   }
 }
 
-.btn {
-  
-}
 
 .dash-container {
   background-color: white;
@@ -279,6 +288,9 @@ nav {
 
 .todaysmeals {
   @extend .dash-container; 
+  .btn {
+    
+  }
   h4 {
     font-family: $altg;
     font-size: 2em;
