@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var models = require('../db/models/index');
 const authHelpers = require('../auth/auth-helpers');
+const dashHelpers = require('../dash/dash-render');
+
 
 
 /* route to the meals form */
@@ -11,13 +13,7 @@ router.get('/', authHelpers.loginRequired, (req,res,next) => {
 
 /* posting into the database */
 
-router.post('/:id', (req, res, next) => {
-  models.UserMeals.create({
-    ingredients: req.body.name,
-    comments: req.body.comments,
-    whichMeal: req.body.whichmeal,
-    belongsTo: req.params.id
-  });
+router.post('/:id', dashHelpers.getFoodInfo, dashHelpers.postMeal, (req, res, next) => {
   res.redirect('/user');
 });
 
