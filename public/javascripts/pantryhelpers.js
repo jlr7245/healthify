@@ -30,8 +30,6 @@ let change = false;
     };
 
     const deleteFoodItem = (e,id,index) => {
-      console.log('click');
-      console.log(id,index);
       pantryItems.splice(index,1);
       axios.delete(`/foods/${id}`)
       .then((res) => console.log(res))
