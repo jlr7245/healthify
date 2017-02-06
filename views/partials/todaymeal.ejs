@@ -1,6 +1,13 @@
 <li data-id='<%= meal.id %>'>
   <div class='info'>
-    <h3><%= meal.whichMeal %> <span class='time'><%= moment(meal.createdAt).format('hA') %></span></h3>
+    <div class='metadata'>
+      <h3><%= meal.whichMeal %></h3>
+      <span class='time'><%= moment(meal.createdAt).format('hA') %></span>
+      <a class='iconclick' href='<%=`/meals/${meal.id}`%>'><i class='fa fa-pencil'></i></a>
+      <form class='single' action='<%= `/meals/delete/${meal.id}?_method=DELETE`%>' method='POST'>
+        <button type='submit'><i class='fa fa-trash'></i></button>
+      </form>
+    </div>
     <p class='ingredients'><%= meal.ingredients %></p>
     <p class='comments'><%= meal.comments %></p>
   </div>

@@ -26,32 +26,50 @@ footer {
   footer .footercol {
     flex: 1; }
 
-/* ====================== FORM */
-input[type=text], input[type=password], textarea {
-  border-bottom: 3px solid #32B67A;
-  font-size: 1.5em;
-  display: block;
-  margin: 20px 0;
-  padding: 5px;
-  font-family: "alternate-gothic-no-2-d", impact, sans-serif;
-  width: 100%;
+/*=============== edit & delete buttons */
+.iconclick {
+  cursor: pointer;
+  color: #ccc;
   transition: 0.2s all; }
-  input[type=text]:focus, input[type=password]:focus, textarea:focus {
-    border-color: #F0CF61;
-    transition: 0.2s all;
-    outline: 0; }
+  .iconclick:hover {
+    color: #32B67A;
+    transition: 0.2s all; }
 
-form {
+.single {
+  display: inline-block; }
+  .single button {
+    cursor: pointer;
+    color: #ccc;
+    transition: 0.2s all; }
+    .single button:hover {
+      color: #F03F35;
+      transition: 0.2s all; }
+
+/* ====================== FORM */
+.full {
   width: 50vw;
   border: 1px solid #eee;
   padding: 50px;
   margin: 0 auto;
   text-align: center; }
-  form label {
+  .full input[type=text], .full input[type=password], .full textarea {
+    border-bottom: 3px solid #32B67A;
+    font-size: 1.5em;
+    display: block;
+    margin: 20px 0;
+    padding: 5px;
+    font-family: "alternate-gothic-no-2-d", impact, sans-serif;
+    width: 100%;
+    transition: 0.2s all; }
+    .full input[type=text]:focus, .full input[type=password]:focus, .full textarea:focus {
+      border-color: #F0CF61;
+      transition: 0.2s all;
+      outline: 0; }
+  .full label {
     color: #ccc;
     font-size: 0.8em;
     text-transform: uppercase; }
-  form input[type=submit] {
+  .full input[type=submit] {
     font-size: 1.8em;
     margin: 20px;
     padding: 5px 40px;
@@ -60,22 +78,23 @@ form {
     border-radius: 30px;
     cursor: pointer;
     transition: 0.3s all; }
-    form input[type=submit]:hover {
+    .full input[type=submit]:hover {
       background-color: #32B67A;
       transition: 0.3s all; }
-  form .fields {
+  .full .fields {
     display: flex;
     text-align: left; }
-    form .fields div {
+    .full .fields div {
       margin: 15px;
       flex: 1;
+      flex-direction: column;
       display: flex; }
-  form select {
+  .full select {
     font-size: 1.5em;
     font-family: "alternate-gothic-no-2-d", impact, sans-serif;
     flex: 1;
     padding: 0 25px; }
-    form select option {
+    .full select option {
       font-size: 1rem;
       font-family: "alternate-gothic-no-2-d", impact, sans-serif; }
 
