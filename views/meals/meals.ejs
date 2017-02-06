@@ -1,8 +1,8 @@
 <% include ../partials/header %>
 
 <div class='container'>
-  <form method='POST' action="<%= `/meals/${user.id}` %>" >
-    <input type='text' name='name' placeholder='Ingredients' />
+  <form class='full' method='POST' action="<%= `/meals/${user.id}` %>" >
+    <input type='text' name='foodName' placeholder='Ingredients' />
     <div class='fields'>
       <div>
         <input type='text' name='comments' placeholder='Your Comments'/>

@@ -1,5 +1,5 @@
 /* Variables */
-/* Body */
+/* ============= Body */
 body {
   font-family: "brandon-grotesque", helvetica, sans-serif; }
 
@@ -26,32 +26,50 @@ footer {
   footer .footercol {
     flex: 1; }
 
-/* ====================== FORM */
-input[type=text], input[type=password], textarea {
-  border-bottom: 3px solid #32B67A;
-  font-size: 1.5em;
-  display: block;
-  margin: 20px 0;
-  padding: 5px;
-  font-family: "alternate-gothic-no-2-d", impact, sans-serif;
-  width: 100%;
+/*=============== edit & delete buttons */
+.iconclick {
+  cursor: pointer;
+  color: #ccc;
   transition: 0.2s all; }
-  input[type=text]:focus, input[type=password]:focus, textarea:focus {
-    border-color: #F0CF61;
-    transition: 0.2s all;
-    outline: 0; }
+  .iconclick:hover {
+    color: #32B67A;
+    transition: 0.2s all; }
 
-form {
+.single {
+  display: inline-block; }
+  .single button {
+    cursor: pointer;
+    color: #ccc;
+    transition: 0.2s all; }
+    .single button:hover {
+      color: #F03F35;
+      transition: 0.2s all; }
+
+/* ====================== FORM */
+.full {
   width: 50vw;
   border: 1px solid #eee;
   padding: 50px;
   margin: 0 auto;
   text-align: center; }
-  form label {
+  .full input[type=text], .full input[type=password], .full textarea {
+    border-bottom: 3px solid #32B67A;
+    font-size: 1.5em;
+    display: block;
+    margin: 20px 0;
+    padding: 5px;
+    font-family: "alternate-gothic-no-2-d", impact, sans-serif;
+    width: 100%;
+    transition: 0.2s all; }
+    .full input[type=text]:focus, .full input[type=password]:focus, .full textarea:focus {
+      border-color: #F0CF61;
+      transition: 0.2s all;
+      outline: 0; }
+  .full label {
     color: #ccc;
     font-size: 0.8em;
     text-transform: uppercase; }
-  form input[type=submit] {
+  .full input[type=submit] {
     font-size: 1.8em;
     margin: 20px;
     padding: 5px 40px;
@@ -60,22 +78,23 @@ form {
     border-radius: 30px;
     cursor: pointer;
     transition: 0.3s all; }
-    form input[type=submit]:hover {
+    .full input[type=submit]:hover {
       background-color: #32B67A;
       transition: 0.3s all; }
-  form .fields {
+  .full .fields {
     display: flex;
     text-align: left; }
-    form .fields div {
+    .full .fields div {
       margin: 15px;
       flex: 1;
+      flex-direction: column;
       display: flex; }
-  form select {
+  .full select {
     font-size: 1.5em;
     font-family: "alternate-gothic-no-2-d", impact, sans-serif;
     flex: 1;
     padding: 0 25px; }
-    form select option {
+    .full select option {
       font-size: 1rem;
       font-family: "alternate-gothic-no-2-d", impact, sans-serif; }
 
@@ -195,31 +214,84 @@ nav {
 
 .todaysmeals ul {
   display: flex;
-  margin: 15px 0; }
+  margin: 15px 0;
+  flex-wrap: wrap;
+  user-select: none; }
   @media screen and (max-width: 800px) {
     .todaysmeals ul {
       flex-direction: column;
+      flex-wrap: nowrap;
       max-height: 300px;
-      overflow-x: auto;
+      overflow-y: auto;
       border: 1px solid #eee;
       padding: 15px; } }
   .todaysmeals ul li {
     border: 1px solid #ddd;
-    padding: 20px;
     margin: 5px;
     flex: 1; }
+    @media screen and (max-width: 800px) {
+      .todaysmeals ul li {
+        display: block; } }
+    @media screen and (min-width: 800px) {
+      .todaysmeals ul li {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; } }
+    @media screen and (min-width: 1090px) {
+      .todaysmeals ul li {
+        max-width: 32%; } }
+    .todaysmeals ul li .info {
+      padding: 20px; }
     .todaysmeals ul li h3 {
       font-family: "leitura-news", georgia, sans-serif;
-      font-size: 1.3em; }
+      font-size: 1.3em;
+      margin-bottom: 15px;
+      text-transform: capitalize; }
     .todaysmeals ul li p {
-      padding: 20px 0; }
+      padding: 10px 0; }
+    .todaysmeals ul li .ingredients {
+      color: #aaa;
+      font-size: 0.9rem; }
+    .todaysmeals ul li .comments {
+      font-size: 1.1rem; }
+    .todaysmeals ul li .nutrients {
+      display: flex; }
+      @media screen and (min-width: 800px) {
+        .todaysmeals ul li .nutrients {
+          height: 40px; } }
+      @media screen and (max-width: 500px) {
+        .todaysmeals ul li .nutrients {
+          flex-direction: column; } }
+      .todaysmeals ul li .nutrients div {
+        flex: 1;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 5px;
+        border-top: 1px solid #eee; }
+        @media screen and (max-width: 500px) {
+          .todaysmeals ul li .nutrients div {
+            justify-content: center; } }
+        .todaysmeals ul li .nutrients div label {
+          font-size: 0.5rem;
+          text-transform: uppercase;
+          color: #aaa; }
+          @media screen and (max-width: 500px) {
+            .todaysmeals ul li .nutrients div label {
+              margin-right: 5px; } }
     .todaysmeals ul li .time {
       background-color: #0E38B1;
+      font-family: "brandon-grotesque", helvetica, sans-serif;
+      letter-spacing: 1px;
       color: white;
-      font-size: 0.8em;
+      font-size: 0.8rem;
+      display: inline-block;
+      vertical-align: top;
       text-transform: uppercase;
       padding: 3px 5px;
-      border-radius: 10px; }
+      border-radius: 10px;
+      margin: 0 3px; }
 
 /* ============= SET UP FOR TABS ============= */
 .tabntr {
@@ -250,11 +322,13 @@ nav {
     .tabnav ul li.actv {
       border-bottom: 3px solid #32B67A; }
 
-#tabcontent .tabcont {
-  display: none; }
-
-#tabcontent .actv {
-  display: block; }
+#tabcontent {
+  max-height: 500px;
+  overflow-x: auto; }
+  #tabcontent .tabcont {
+    display: none; }
+  #tabcontent .actv {
+    display: block; }
 
 /* ================== FOODSLIST STYLING ================ */
 .foods, .archives {
@@ -338,22 +412,37 @@ nav {
     display: block;
     opacity: 1; }
 
-.third .warn {
-  color: #F03F35;
-  border-bottom: 1px dotted #F03F35; }
-
-.third .good {
-  color: #32B67A;
-  border-bottom: 1px dotted #32B67A; }
-
-.third .neutral {
-  color: #F0CF61;
-  border-bottom: 1px dotted #F0CF61; }
+#archive {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column; }
+  #archive img {
+    display: none; }
+  @media screen and (min-width: 1000px) {
+    #archive {
+      flex-direction: row; } }
+  @media screen and (min-width: 800px) {
+    #archive li {
+      min-width: 48%; } }
+  #archive .fourth {
+    display: none; }
 
 /* ============ NUTRITION TRACKER STYLING =========== */
 .nutritiontrack {
   flex: 1; }
 
 /* ======= ARCHIVE STYLING === */
+/*==== WARN GOOD NEUTRAL ===== */
+.warn {
+  color: #F03F35;
+  border-bottom: 1px dotted #F03F35; }
+
+.good {
+  color: #32B67A;
+  border-bottom: 1px dotted #32B67A; }
+
+.neutral {
+  color: #F0CF61;
+  border-bottom: 1px dotted #F0CF61; }
 
 /*# sourceMappingURL=style.css.map */

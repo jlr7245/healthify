@@ -1,0 +1,33 @@
+
+<li data-id='<%= meal.id %>'>
+  <div class='info'>
+    <div class='metadata'>
+      <h3><%= meal.whichMeal %></h3>
+      <span class='time'><%= moment(meal.createdAt).format('hA') %></span>
+      <a class='iconclick' href='<%=`/meals/${meal.id}`%>'><i class='fa fa-pencil'></i></a>
+      <form class='single' action='<%= `/meals/delete/${meal.id}?_method=DELETE`%>' method='POST'>
+        <button type='submit'><i class='fa fa-trash'></i></button>
+      </form>
+    </div>
+    <p class='ingredients'><%= meal.ingredients %></p>
+    <p class='comments'><%= meal.comments %></p>
+  </div>
+  <div class='nutrients'>
+    <div class='sodium'>
+      <label>Sodium</label> 
+      <span class='warn'><%= meal.totalSodium / 1000 %>g</span>
+    </div>
+    <div class='protein'>
+      <label>Protein</label> 
+      <span class='good'><%= meal.totalProtein %>g</span>
+    </div>
+    <div class='carbs'>
+      <label>Carbs</label> 
+      <span class='neutral'><%= meal.totalCarbs %>g</span>
+    </div>
+    <div class='fiber'>
+      <label>Fiber</label> 
+      <span class='neutral'><%= meal.totalFiber %>g</span>
+    </div>
+  </div>
+</li>
