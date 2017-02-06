@@ -4,9 +4,10 @@ module.exports = function(sequelize, DataTypes) {
     name: {
       type: DataTypes.STRING,
       unique: true
+    },
     email: {
       type: DataTypes.STRING(128),
-
+    },
     isNew: DataTypes.STRING
   }, {
     classMethods: {

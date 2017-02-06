@@ -1,4 +1,4 @@
-const passport = require('passport');
+/*const passport = require('passport');
 const FacebookStrategy = require('passport-facebook').Strategy;
 const models = require('../db/models/index');
 
@@ -12,7 +12,7 @@ passport.use(new FacebookStrategy({
       return cb(err, user);
     });
   }
-));
+));*/
 
 /*passport.serializeUser(function(user, cb) {
   cb(null, user);
