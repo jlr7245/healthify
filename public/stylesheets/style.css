@@ -209,9 +209,18 @@ nav {
   .todaysmeals ul li {
     border: 1px solid #ddd;
     margin: 5px;
-    flex: 1;
-    min-width: 350px;
-    max-width: 550px; }
+    flex: 1; }
+    @media screen and (max-width: 800px) {
+      .todaysmeals ul li {
+        display: block; } }
+    @media screen and (min-width: 800px) {
+      .todaysmeals ul li {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; } }
+    @media screen and (min-width: 1090px) {
+      .todaysmeals ul li {
+        max-width: 32%; } }
     .todaysmeals ul li .info {
       padding: 20px; }
     .todaysmeals ul li h3 {
@@ -294,11 +303,13 @@ nav {
     .tabnav ul li.actv {
       border-bottom: 3px solid #32B67A; }
 
-#tabcontent .tabcont {
-  display: none; }
-
-#tabcontent .actv {
-  display: block; }
+#tabcontent {
+  max-height: 500px;
+  overflow-x: auto; }
+  #tabcontent .tabcont {
+    display: none; }
+  #tabcontent .actv {
+    display: block; }
 
 /* ================== FOODSLIST STYLING ================ */
 .foods, .archives {
@@ -393,6 +404,21 @@ nav {
 .third .neutral {
   color: #F0CF61;
   border-bottom: 1px dotted #F0CF61; }
+
+#archive {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column; }
+  #archive img {
+    display: none; }
+  @media screen and (min-width: 1000px) {
+    #archive {
+      flex-direction: row; } }
+  @media screen and (min-width: 800px) {
+    #archive li {
+      min-width: 48%; } }
+  #archive .fourth {
+    display: none; }
 
 /* ============ NUTRITION TRACKER STYLING =========== */
 .nutritiontrack {
