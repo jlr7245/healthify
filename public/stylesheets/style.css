@@ -412,18 +412,6 @@ nav {
     display: block;
     opacity: 1; }
 
-.third .warn {
-  color: #F03F35;
-  border-bottom: 1px dotted #F03F35; }
-
-.third .good {
-  color: #32B67A;
-  border-bottom: 1px dotted #32B67A; }
-
-.third .neutral {
-  color: #F0CF61;
-  border-bottom: 1px dotted #F0CF61; }
-
 #archive {
   display: flex;
   flex-wrap: wrap;
@@ -444,5 +432,17 @@ nav {
   flex: 1; }
 
 /* ======= ARCHIVE STYLING === */
+/*==== WARN GOOD NEUTRAL ===== */
+.warn {
+  color: #F03F35;
+  border-bottom: 1px dotted #F03F35; }
+
+.good {
+  color: #32B67A;
+  border-bottom: 1px dotted #32B67A; }
+
+.neutral {
+  color: #F0CF61;
+  border-bottom: 1px dotted #F0CF61; }
 
 /*# sourceMappingURL=style.css.map */
