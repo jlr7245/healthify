@@ -21,6 +21,7 @@
     "morgan": "~1.7.0",
     "node-sass-middleware": "0.9.8",
     "passport": "^0.3.2",
+    "passport-facebook": "^2.0.0",
     "passport-local": "^1.0.0",
     "pg": "^6.1.2",
     "pg-hstore": "^2.3.2",

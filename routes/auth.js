@@ -36,6 +36,17 @@ router.post('/login', passport.authenticate('local', {
   })
 );
 
+/*router.get('/auth/facebook',
+  passport.authenticate('facebook'));
+
+router.get('/auth/facebook/',
+  passport.authenticate('facebook', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.render('/');
+  });
+*/
+
 //this logs-out the user and then redirects the user to the homepage.
 router.get('/logout', (req, res) => {
   req.logout();
