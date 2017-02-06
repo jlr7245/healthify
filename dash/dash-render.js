@@ -2,7 +2,7 @@ const models = require('../db/models/index'); // importing the model
 const apiCall = require('../keys/nutritionix'); // importing the API call settings
 
 function renderFoods(req,res,next) {
-  models.sequelize.query('SELECT "Foods".* FROM "Foods" JOIN "Users" ON "Users"."id" = "Foods"."belongsTo" WHERE "Users"."id" = :id', {
+  models.sequelize.query('SELECT "Foods".* FROM "Foods" JOIN "Users" ON "Users"."id" = "Foods"."belongsTo" WHERE "Users"."id" = :id ORDER BY "Foods"."createdAt" DESC', {
     replacements: { id: req.user.id }, /// replaces :id in the query
     type: models.sequelize.QueryTypes.SELECT // don't need metadata in the response
   }).then((foods) => {
@@ -12,10 +12,10 @@ function renderFoods(req,res,next) {
 }
 
 function renderMeals(req,res,next) {
-  models.sequelize.query('SELECT * FROM "Meals" JOIN "Users" ON "Users"."id" = "Meals"."belongsTo" WHERE "Users"."id" = :id', {
+  models.sequelize.query('SELECT "UserMeals".* FROM "UserMeals" JOIN "Users" ON "Users"."id" = "UserMeals"."belongsTo" WHERE "Users"."id" = :id', {
     replacements: { id: req.user.id }, /// replaces :id in the query
     type: models.sequelize.QueryTypes.SELECT // don't need metadata in the response
-  }).then((foods) => {
+  }).then((meals) => {
     res.locals.meals = meals; // setting res.locals object to access in the response
     return next(); // next function
   });
@@ -85,5 +85,6 @@ module.exports = {
   renderFoods,
   getFoodInfo,
   postFoodsIntoDatabase,
-  postMeal
+  postMeal,
+  renderMeals
 };
