@@ -10,13 +10,15 @@
     <h4><img src='/images/meals-icon.png'> Today's Meals</h4>
     <a href='/meals' class='btn' id='addmealbutton'>Add a meal</a>
     <ul id='todaymeals'>
+      <% let mealCounter = 0; %>
       <% if (meals.length !== 0) { %>
         <% meals.forEach((meal) => { %>
          <% if (moment(meal.createdAt).format('DDD, Y') == moment().format('DDD, Y') ) { %>
           <% include ../partials/todaymeal %>
+          <% mealCounter += 1 %>
          <% } %>
       <% }) %>
-      <% } else if (meals.length === 0 ) { %>
+      <% } else if (meals.length === 0 || mealCounter === 0) { %>
         <a href='/meals'>Add a meal!</a>
       <% } %>
     </ul>

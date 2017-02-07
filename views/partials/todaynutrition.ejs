@@ -12,7 +12,12 @@
   <% } %>
 <% }) %>
 
-<h3>Sodium: <%= todaySodium %>mg</h3>
-<h3>Protein: <%= todayProtein %>g</h3>
-<h3>Carbs: <%= todayCarbs %>g</h3>
-<h3>Fiber: <%= todayFiber %>g</h3>
+<% if (todaySodium > 0 || todayProtein > 0 || todayCarbs > 0 || todayFiber > 0) { %>
+  <h3>Sodium: <%= todaySodium %>mg</h3>
+  <h3>Protein: <%= todayProtein %>g</h3>
+  <h3>Carbs: <%= todayCarbs %>g</h3>
+  <h3>Fiber: <%= todayFiber %>g</h3>
+<% } else { %>
+  <h3>You have not added a meal yet today!</h3>
+  <a class='btn' href='/meal'>Add a meal!</a>
+<% } %>
