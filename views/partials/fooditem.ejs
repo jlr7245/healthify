@@ -21,11 +21,11 @@
   </h2>
 </div>
 <div class='foodsub second'>
-  <h3><label>Added on</label><%= moment(food.createdAt).format("dddd, hA") %></h3>
+  <h3><label>Added on</label><%= moment(food.createdAt).format("dddd, hA") %> </h3>
 </div>
 <div class='foodsub third'>
   <span class='<%= proteinClass %>'><i class='fa fa-circle'></i> Protein <span class='tooltip'><%= food.protein %>g</span></span>
-  <span class='<%= sodiumClass %>'><i class='fa fa-circle'></i> Sodium <span class='tooltip'><%= parseInt(food.sodium) / 1000 %>g</span></span>
+  <span class='<%= sodiumClass %>'><i class='fa fa-circle'></i> Sodium <span class='tooltip'><%= food.sodium %>mg</span></span>
   <span class='<%= carbsClass %>'><i class='fa fa-circle'></i> Carbs <span class='tooltip'><%= food.carbohydrates %>g</span></span>
 </div>
 <% if (!food.updated) { %>
