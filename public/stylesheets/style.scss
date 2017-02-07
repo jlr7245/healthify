@@ -612,6 +612,19 @@ nav {
   flex: 1;
 }
 
+#data-bar {
+  width: 225px;
+  height: 300px;
+}
+
+.nutritionintro {
+  font-size: 1.1em;
+  color: #ccc;
+  font-style: italic;
+  line-height: 1.3em;
+  margin-bottom: 20px;
+}
+
 /* ======= ARCHIVE STYLING === */
 .archives {
   @extend .dash-container;

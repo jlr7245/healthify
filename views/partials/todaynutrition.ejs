@@ -13,11 +13,22 @@
 <% }) %>
 
 <% if (todaySodium > 0 || todayProtein > 0 || todayCarbs > 0 || todayFiber > 0) { %>
-  <h3>Sodium: <%= todaySodium %>mg</h3>
-  <h3>Protein: <%= todayProtein %>g</h3>
-  <h3>Carbs: <%= todayCarbs %>g</h3>
-  <h3>Fiber: <%= todayFiber %>g</h3>
+  <p class='nutritionintro'>All nutrition is based on the FDA's guidelines for a 2000-calorie diet.</p>
+  <div id='data-bar'></div>
 <% } else { %>
   <h3>You have not added a meal yet today!</h3>
   <a class='btn' href='/meal'>Add a meal!</a>
+<% } %>
+
+<script>
+  const nutriData = { 
+    sodium: Math.floor(<%= todaySodium %> / 2400 * 100),
+    protein: Math.floor(<%= todayProtein %> / 50 * 100),
+    carbs: Math.floor(<%= todayCarbs %> / 300 * 100),
+    fiber: Math.floor(<%= todayFiber %> / 25 * 100)
+  }
+</script>
+<% if (todaySodium > 0 || todayProtein > 0 || todayCarbs > 0 || todayFiber > 0) { %>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src='/javascripts/d3-helper.js'></script>
 <% } %>
