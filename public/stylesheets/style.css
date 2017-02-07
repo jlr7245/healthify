@@ -444,6 +444,52 @@ nav {
   flex: 1; }
 
 /* ======= ARCHIVE STYLING === */
+.meals ul {
+  display: flex;
+  flex-wrap: wrap; }
+
+.meals li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  min-width: 300px;
+  border: 1px solid #eee;
+  padding: 10px;
+  margin: 10px; }
+  .meals li .metadata {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 10px; }
+    .meals li .metadata h3 {
+      font-family: "leitura-news", georgia, sans-serif;
+      text-transform: capitalize;
+      font-size: 1.2rem; }
+    .meals li .metadata .iconclick {
+      display: none; }
+    .meals li .metadata .time {
+      color: white;
+      background-color: #0E38B1;
+      letter-spacing: 1px;
+      font-size: 0.8rem;
+      padding: 3px 5px;
+      border-radius: 10px;
+      margin: 0 3px;
+      text-transform: uppercase; }
+  .meals li .nutrients {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    padding: 8px 0 0 0;
+    border-top: 1px solid #eee;
+    margin-top: 8px; }
+  .meals li .ingredients {
+    margin-bottom: 8px;
+    color: #ccc;
+    font-size: 0.8rem; }
+
 /*==== WARN GOOD NEUTRAL ===== */
 .warn {
   color: #F03F35;

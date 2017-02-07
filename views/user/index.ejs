@@ -51,7 +51,16 @@
           </ul>
         </div>
         <div class='meals tabcont'>
-          
+          <ul>
+            <% if (meals.length !== 0) {%>
+              <% meals.reverse(); %>
+              <% meals.forEach((meal) => { %>
+                <% if (moment(meal.createdAt).format('w, YYYY') == moment().format('w, YYYY') ) { %>
+                <% include ../partials/todaymeal %>
+                <% } %>
+             <% }) %>
+            <% } %>
+          </ul>
         </div>
       </div>
     </div>

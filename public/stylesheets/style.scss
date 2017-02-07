@@ -571,6 +571,61 @@ nav {
   @extend .dash-container;
 }
 
+.meals {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    min-width: 300px;
+    border: $pencilbrdr;
+    padding: 10px;
+    margin: 10px;
+    .metadata {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin-bottom: 10px;
+      h3 {
+        font-family: $ltn;
+        text-transform: capitalize;
+        font-size: 1.2rem;
+      }
+      .iconclick {
+        display: none;
+      }
+      .time {
+        color: white;
+        background-color: $brand2;
+        letter-spacing: 1px;
+        font-size: 0.8rem;
+        padding: 3px 5px;
+        border-radius:10px;
+        margin: 0 3px;
+        text-transform: uppercase;
+      }
+    }
+    .nutrients {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-size: 0.7rem;
+      padding: 8px 0 0 0;
+      border-top: $pencilbrdr;
+      margin-top: 8px;
+    }
+    .ingredients {
+      margin-bottom: 8px;
+      color: #ccc;
+      font-size: 0.8rem;
+    }
+  }
+}
+
 /*==== WARN GOOD NEUTRAL ===== */
 
 .warn {
