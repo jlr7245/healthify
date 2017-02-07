@@ -33,8 +33,10 @@ body {
 
 footer {
   background-color: $accent-light;
-  color: $brand2;
-  padding: 50px 10vw;
+  color: #222;
+  text-align: center;
+  line-height: 1.5em;
+  padding: 50px 15vw;
   display: flex;
   flex-direction: column;
   @media screen and (min-width: 800px) {
@@ -42,6 +44,12 @@ footer {
   }
   .footercol {
     flex: 1;
+  }
+  a {
+    text-decoration: none;
+  }
+  .bgr {
+    font-size: 1.3em;
   }
 }
 
@@ -72,6 +80,22 @@ footer {
   
 }
 
+.base-button {
+    font-size: 1.8em;
+    margin: 20px;
+    padding: 5px 40px;
+    background-color: $brand2;
+    color: $accent-light;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s all;
+
+    &:hover {
+      background-color: $brand;
+      transition: 0.3s all;
+    }
+}
+
 /* ====================== FORM */
 .full {
   input[type=text], input[type=password], textarea {
@@ -100,19 +124,7 @@ footer {
     text-transform: uppercase;
   }
   input[type=submit] {
-    font-size: 1.8em;
-    margin: 20px;
-    padding: 5px 40px;
-    background-color: $brand2;
-    color: $accent-light;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: 0.3s all;
-
-    &:hover {
-      background-color: $brand;
-      transition: 0.3s all;
-    }
+  @extend .base-button;
   }
   .fields {
     display: flex;
@@ -220,11 +232,10 @@ nav {
     .hm {
       display: inline-block;
       text-decoration:none;
-      padding: 5px 20px;
+      padding: 10px 60px;
       margin: 50px 15px;
       font-size: 2em;
-      border: 5px solid $accent;
-      border-radius: 10px;
+      border-radius: 30px;
       background-color: rgba($brand, 0.8);
       transition: 0.2s all;
       color: white;
@@ -288,7 +299,17 @@ nav {
 
 .todaysmeals {
   @extend .dash-container; 
-
+  .mealstop {display: flex; align-items: center;}
+  .btn {
+    display: block;
+    text-decoration: none;
+    margin: 0 10px;
+    color: white;
+    background-color: $brand2;
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+  }
   h4 {
     font-family: $altg;
     font-size: 2em;
@@ -309,6 +330,20 @@ nav {
       overflow-y: auto;
       border: $pencilbrdr;
       padding: 15px;
+    }
+    .addnew {
+      @extend .base-button;
+      text-decoration: none;
+      background-color: #eee;
+      color: $brand;
+      display: block;
+      width: 80%;
+      margin: 0px auto;
+      text-align: center;
+      padding: 20px 10px;
+      &:hover {
+        color: white;
+      }
     }
     li {
       border: 1px solid #ddd;
@@ -443,8 +478,18 @@ nav {
 
 /* ================== FOODSLIST STYLING ================ */
 
+
 .foods, .archives {
   user-select: none;
+  .btn {
+    @extend .base-button;
+    display: block;
+    width: 50%;
+    text-align: center;
+    margin: 10px auto 20px;
+    text-decoration: none;
+    padding: 10px;
+  }
   ul {
     font-size: 0.8em;
     li {
@@ -570,6 +615,20 @@ nav {
 /* ======= ARCHIVE STYLING === */
 .archives {
   @extend .dash-container;
+  .title {
+      flex: 1;
+      text-align: center;
+      padding: 0 0 15px;
+      border-bottom: 3px solid #ddd;
+      font-family: $altg;
+      font-size: 2em;
+      margin-bottom: 15px;
+      img {
+        max-height: 1.5em;
+        vertical-align:middle;
+        margin: 0 10px;
+      }
+  }
 }
 
 .meals {

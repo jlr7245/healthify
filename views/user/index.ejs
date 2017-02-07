@@ -7,8 +7,10 @@
   </div>
   
   <div class='todaysmeals'>
-    <h4><img src='/images/meals-icon.png'> Today's Meals</h4>
-    <a href='/meals' class='btn' id='addmealbutton'>Add a meal</a>
+    <div class='mealstop'>
+      <h4><img src='/images/meals-icon.png'> Today's Meals</h4>
+      <a href='/meals' class='btn' id='addmealbutton'>Add a meal</a>
+    </div>
     <ul id='todaymeals'>
       <% let mealCounter = 0; %>
       <% if (meals.length !== 0) { %>
@@ -19,7 +21,7 @@
          <% } %>
       <% }) %>
       <% } else if (meals.length === 0 || mealCounter === 0) { %>
-        <a href='/meals'>Add a meal!</a>
+        <a href='/meals' class='addnew'>Click here to add your first meal of the day!</a>
       <% } %>
     </ul>
   </div>
@@ -90,6 +92,7 @@
   </div>
   
   <div class='archives'>
+    <h3 class='title'>Your Archive</h3>
     <ul id='archive'>
       <% if (foods.length !== 0) { %>
        <% foods.forEach((food) => { %>
