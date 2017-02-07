@@ -375,6 +375,23 @@ nav {
     display: block; }
 
 /* ================== FOODSLIST STYLING ================ */
+.btn-addmeal {
+  display: block;
+  margin: 10px auto;
+  width: 50%;
+  padding: 5px 10px;
+  text-align: center;
+  color: #32B67A;
+  background-color: #eee;
+  text-decoration: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.2s all; }
+  .btn-addmeal:hover {
+    background-color: #32B67A;
+    color: white;
+    transition: 0.2s all; }
+
 .foods, .archives {
   user-select: none; }
   .foods .btn, .archives .btn {
