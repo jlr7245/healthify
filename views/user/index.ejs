@@ -2,14 +2,14 @@
 <div class='container'>
   
   <div class='top'>
-    <h1>Welcome back, <%= user.fullName %>.</h1>
+    <h1 id='welcome'>Welcome, <%= user.fullName %>.</h1>
     <a class='btn' href='/auth/logout'>Log out</a>
   </div>
   
   <div class='todaysmeals'>
     <h4><img src='/images/meals-icon.png'> Today's Meals</h4>
-    <a href='/meals' class='btn'>Add a meal</a>
-    <ul>
+    <a href='/meals' class='btn' id='addmealbutton'>Add a meal</a>
+    <ul id='todaymeals'>
       <% if (meals.length !== 0) { %>
         <% meals.forEach((meal) => { %>
          <% if (moment(meal.createdAt).format('DDD, Y') == moment().format('DDD, Y') ) { %>
@@ -27,8 +27,8 @@
     <div id='tabs' class='tbbr'>
       <div class='tabnav'>
         <ul>
-          <li class='tablink actv'><img src='/images/pantry-icon.png'> Pantry</li>
-          <li class='tablink'>Weekly Meals</li>
+          <li class='tablink actv' id='pantrytab'><img src='/images/pantry-icon.png'> Pantry</li>
+          <li class='tablink' id='mealstab'>Weekly Meals</li>
         </ul>
       </div>
       
@@ -65,7 +65,7 @@
       </div>
     </div>
     
-    <div class='nutritiontrack'>
+    <div class='nutritiontrack' id='nutritionfacts'>
       Weekly nutrition chart goes here (d3??? 🤔)
     </div>
   
@@ -89,9 +89,14 @@
   
 </div>
 
-
+<script>
+  const id = <%= user.id %>;
+</script>
 <script src='/javascripts/dashtabs.js'></script>
 <script src='/javascripts/pantryhelpers.js'></script>
+<% if (user.isNew == 'yes') {%>
+  <script src='/javascripts/dash-tour.js'></script> 
+<% } %>
 <% include ../partials/footer %>
 
 
