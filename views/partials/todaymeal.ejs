@@ -23,7 +23,7 @@
   <div class='info'>
     <div class='metadata'>
       <h3><%= meal.whichMeal %></h3>
-      <span class='time'><%= moment(meal.createdAt).format('hA') %> <%= ( moment(meal.createdAt).format('D') == moment().format('D') ) ? 'today' : moment(meal.createdAt).format('ddd') %></span>
+      <span class='time'><%= moment(meal.createdAt).format('hA') %> <%= ( moment(meal.createdAt).tz('America/New_York').format('D') == moment().tz('America/New_York').format('D') ) ? 'today' : moment(meal.createdAt).tz('America/New_York').format('ddd') %></span>
       <a class='iconclick' href='<%=`/meals/${meal.id}`%>'><i class='fa fa-pencil'></i></a>
       <form class='single' action='<%= `/meals/delete/${meal.id}?_method=DELETE`%>' method='POST'>
         <button type='submit'><i class='fa fa-trash'></i></button>

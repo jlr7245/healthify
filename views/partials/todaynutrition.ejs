@@ -4,7 +4,7 @@
 <% let todayFiber = 0; %>
 
 <% meals.forEach((meal) => { %>
-  <% if (moment(meal.createdAt).format('DDD, Y') == moment().format('DDD, Y') ) { %>
+  <% if (moment(meal.createdAt).tz('America/New_York').format('DDD, Y') == moment().tz('America/New_York').format('DDD, Y') ) { %>
    <% todaySodium += parseInt(meal.totalSodium); %>
    <% todayProtein += parseInt(meal.totalProtein); %>
    <% todayCarbs += parseInt(meal.totalCarbs); %>
