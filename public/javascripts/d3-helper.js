@@ -37,7 +37,7 @@ chart.append('rect')
   .attr("height", (d) => {return 50 } )
   .attr('x',0)
   .attr('y', (d,i) => { return i * 60} )
-  .attr("fill", (d) => { return d.color })
+  .attr("fill", (d) => { return d.color });
 chart.append('text')
   .style("fill", "black")
   .attr('x', 50)
