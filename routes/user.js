@@ -4,8 +4,8 @@ const express = require('express');
 const router = express.Router();
 const authHelpers = require('../auth/auth-helpers');
 const dashRenders = require('../dash/dash-render');
-const moment = require('moment');
-
+const moment = require('moment-timezone');
+var models = require('../db/models/index');
 
 
 /* GET users listing. */
@@ -21,10 +21,9 @@ router.get('/', authHelpers.loginRequired, dashRenders.renderFoods, dashRenders.
   });
 });
 
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+router.patch('/:id', (req,res,next) => {
+  models.User.update( req.body, { where: { id: req.params.id } });
 });
-
 
 
 module.exports = router;

@@ -2,22 +2,26 @@
 <div class='container'>
   
   <div class='top'>
-    <h1>Welcome back, <%= user.fullName %>.</h1>
+    <h1 id='welcome'>Welcome, <%= user.fullName %>.</h1>
     <a class='btn' href='/auth/logout'>Log out</a>
   </div>
   
   <div class='todaysmeals'>
-    <h4><img src='/images/meals-icon.png'> Today's Meals</h4>
-    <a href='/meals' class='btn'>Add a meal</a>
-    <ul>
+    <div class='mealstop'>
+      <h4><img src='/images/meals-icon.png'> Today's Meals</h4>
+      <a href='/meals' class='btn' id='addmealbutton'>Add a meal</a>
+    </div>
+    <ul id='todaymeals'>
+      <% let mealCounter = 0; %>
       <% if (meals.length !== 0) { %>
         <% meals.forEach((meal) => { %>
-         <% if (moment(meal.createdAt).format('DDD, Y') == moment().format('DDD, Y') ) { %>
+         <% if (moment(meal.createdAt).tz('America/New_York').format('DDD, Y') == moment().tz('America/New_York').format('DDD, Y') ) { %>
           <% include ../partials/todaymeal %>
+          <% mealCounter += 1 %>
          <% } %>
       <% }) %>
-      <% } else if (meals.length === 0 ) { %>
-        <a href='/meals'>Add a meal!</a>
+      <% } else if (meals.length === 0 || mealCounter === 0) { %>
+        <a href='/meals' class='addnew'>Click here to add your first meal of the day!</a>
       <% } %>
     </ul>
   </div>
@@ -25,10 +29,10 @@
   <div class='tabntr'>
     
     <div id='tabs' class='tbbr'>
-      <div class='tabnav'>
+      <div class='tabnav tab-nav'>
         <ul>
-          <li class='tablink actv'><img src='/images/pantry-icon.png'> Pantry</li>
-          <li class='tablink'>Weekly Meals</li>
+          <li class='tablink actv' id='pantrytab'><img src='/images/pantry-icon.png'> Pantry</li>
+          <li class='tablink' id='mealstab'>Weekly Meals</li>
         </ul>
       </div>
       
@@ -51,18 +55,40 @@
           </ul>
         </div>
         <div class='meals tabcont'>
-          
+          <ul>
+            <% if (meals.length !== 0) {%>
+              <% meals.reverse(); %>
+              <% meals.forEach((meal) => { %>
+                <% if (moment(meal.createdAt).tz('America/New_York').format('w, YYYY') == moment().tz('America/New_York').format('w, YYYY') ) { %>
+                <% include ../partials/todaymeal %>
+                <% } %>
+             <% }) %>
+            <% } %>
+          </ul>
         </div>
       </div>
     </div>
     
-    <div class='nutritiontrack'>
-      Weekly nutrition chart goes here (d3??? 🤔)
+    <div class='nutritiontrack' id='nutritionfacts'>
+      <div id='nutabs' class='tabbr'>
+        <div class='nutnav tab-nav'>
+          <ul>
+            <li class='nulink actv'>Today's Nutrition</li>
+          </ul>
+        </div>
+        <div id='nutabcontent'>
+          <div class='nucontent actv'>
+            <% include ../partials/todaynutrition %>
+          </div>
+        </div>
+      </div>
+
     </div>
-  
+
   </div>
   
   <div class='archives'>
+    <h3 class='title'>Your Archive</h3>
     <ul id='archive'>
       <% if (foods.length !== 0) { %>
        <% foods.forEach((food) => { %>
@@ -80,9 +106,14 @@
   
 </div>
 
-
+<script>
+  const id = <%= user.id %>;
+</script>
 <script src='/javascripts/dashtabs.js'></script>
 <script src='/javascripts/pantryhelpers.js'></script>
+<% if (user.isNew == 'yes') {%>
+  <script src='/javascripts/dash-tour.js'></script> 
+<% } %>
 <% include ../partials/footer %>
 
 

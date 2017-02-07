@@ -2,10 +2,10 @@
 /* shoutout to http://callmenick.com/post/simple-responsive-tabs-javascript-css for the tutorial that lead me to this solution */
 
 (() => {
-  const tabs = () => {
-    const theElement = document.getElementById('tabs');
-    const tabNav = Array.from(theElement.getElementsByClassName('tablink'));
-    const tabCont = Array.from(theElement.getElementsByClassName('tabcont'));
+  const tabs = (element, navClass, contClass) => {
+    const theElement = document.getElementById(element);
+    const tabNav = Array.from(theElement.getElementsByClassName(navClass));
+    const tabCont = Array.from(theElement.getElementsByClassName(contClass));
     let activeIndex = 0;
     let initCalled = false;
     
@@ -39,5 +39,8 @@
   window.tabs = tabs;
 })();
 
-const dashTabs = tabs();
+const dashTabs = tabs('tabs', 'tablink', 'tabcont');
 dashTabs.init();
+
+const nuTabs = tabs('nutabs', 'nulink', 'nucontent');
+nuTabs.init();

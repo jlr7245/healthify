@@ -23,7 +23,7 @@
   <div class='info'>
     <div class='metadata'>
       <h3><%= meal.whichMeal %></h3>
-      <span class='time'><%= moment(meal.createdAt).format('hA') %></span>
+      <span class='time'><%= moment(meal.createdAt).tz('America/New_York').format('hA') %> <%= ( moment(meal.createdAt).tz('America/New_York').format('D') == moment().tz('America/New_York').format('D') ) ? 'today' : moment(meal.createdAt).tz('America/New_York').format('ddd') %></span>
       <a class='iconclick' href='<%=`/meals/${meal.id}`%>'><i class='fa fa-pencil'></i></a>
       <form class='single' action='<%= `/meals/delete/${meal.id}?_method=DELETE`%>' method='POST'>
         <button type='submit'><i class='fa fa-trash'></i></button>
@@ -35,7 +35,7 @@
   <div class='nutrients'>
     <div class='sodium'>
       <label>Sodium</label>
-      <span class='<%= sodiumClass%>' ><%= meal.totalSodium / 1000 %>g</span>
+      <span class='<%= sodiumClass%>' ><%= meal.totalSodium %>mg</span>
     </div>
     <div class='protein'>
       <label>Protein</label>
