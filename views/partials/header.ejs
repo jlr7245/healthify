@@ -4,7 +4,7 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/reset.css' />
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <% if (title == 'user') {%>
+    <% if (title == 'user' && user.isNew == 'yes') {%>
       <link rel='stylesheet' href='/stylesheets/hopscotch.min.css' />
       <script src='/javascripts/hopscotch.min.js'></script>
     <% } %>
