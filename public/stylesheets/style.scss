@@ -430,6 +430,7 @@ nav {
 
 #tabcontent, #nutabcontent {
   max-height: 500px;
+  min-height: 500px;
   overflow-x: auto;
   .tabcont, .nucontent {
     display: none;

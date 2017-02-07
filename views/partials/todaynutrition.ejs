@@ -1,0 +1,18 @@
+<% let todaySodium = 0; %>
+<% let todayProtein = 0; %>
+<% let todayCarbs = 0; %>
+<% let todayFiber = 0; %>
+
+<% meals.forEach((meal) => { %>
+  <% if (moment(meal.createdAt).format('DDD, Y') == moment().format('DDD, Y') ) { %>
+   <% todaySodium += parseInt(meal.totalSodium); %>
+   <% todayProtein += parseInt(meal.totalProtein); %>
+   <% todayCarbs += parseInt(meal.totalCarbs); %>
+   <% todayFiber += parseInt(meal.totalFiber); %>
+  <% } %>
+<% }) %>
+
+<h3>Sodium: <%= todaySodium %>mg</h3>
+<h3>Protein: <%= todayProtein %>g</h3>
+<h3>Carbs: <%= todayCarbs %>g</h3>
+<h3>Fiber: <%= todayFiber %>g</h3>
