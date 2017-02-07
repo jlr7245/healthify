@@ -1,7 +1,7 @@
 # HEALTHIFY!
 
 ![homepage](public/images/home.png)
-![dashboard](public/images/d3.png)
+![dashboard](public/images/D3.png)
 
 
 
