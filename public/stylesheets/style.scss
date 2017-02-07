@@ -404,7 +404,7 @@ nav {
   flex: 3;
 }
 
-.tabnav {
+.tab-nav {
   margin: 0 0 15px 0;
   ul {
     display: flex;
@@ -428,10 +428,10 @@ nav {
   }
 }
 
-#tabcontent {
+#tabcontent, #nutabcontent {
   max-height: 500px;
   overflow-x: auto;
-  .tabcont {
+  .tabcont, .nucontent {
     display: none;
   }
   .actv {

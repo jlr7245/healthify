@@ -315,11 +315,11 @@ nav {
 .tbbr {
   flex: 3; }
 
-.tabnav {
+.tab-nav {
   margin: 0 0 15px 0; }
-  .tabnav ul {
+  .tab-nav ul {
     display: flex; }
-    .tabnav ul li {
+    .tab-nav ul li {
       flex: 1;
       text-align: center;
       padding: 0 0 15px;
@@ -327,19 +327,19 @@ nav {
       cursor: pointer;
       font-family: "alternate-gothic-no-2-d", impact, sans-serif;
       font-size: 2em; }
-      .tabnav ul li img {
+      .tab-nav ul li img {
         max-height: 1.5em;
         vertical-align: middle;
         margin: 0 10px; }
-    .tabnav ul li.actv {
+    .tab-nav ul li.actv {
       border-bottom: 3px solid #32B67A; }
 
-#tabcontent {
+#tabcontent, #nutabcontent {
   max-height: 500px;
   overflow-x: auto; }
-  #tabcontent .tabcont {
+  #tabcontent .tabcont, #tabcontent .nucontent, #nutabcontent .tabcont, #nutabcontent .nucontent {
     display: none; }
-  #tabcontent .actv {
+  #tabcontent .actv, #nutabcontent .actv {
     display: block; }
 
 /* ================== FOODSLIST STYLING ================ */

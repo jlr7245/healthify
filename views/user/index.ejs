@@ -25,7 +25,7 @@
   <div class='tabntr'>
     
     <div id='tabs' class='tbbr'>
-      <div class='tabnav'>
+      <div class='tabnav tab-nav'>
         <ul>
           <li class='tablink actv' id='pantrytab'><img src='/images/pantry-icon.png'> Pantry</li>
           <li class='tablink' id='mealstab'>Weekly Meals</li>
@@ -66,9 +66,25 @@
     </div>
     
     <div class='nutritiontrack' id='nutritionfacts'>
-      Weekly nutrition chart goes here (d3??? 🤔)
+      <div id='nutabs' class='tabbr'>
+        <div class='nutnav tab-nav'>
+          <ul>
+            <li class='nulink actv'>Today's Nutrition</li>
+            <li class='nulink'>Weekly Stats</li>
+          </ul>
+        </div>
+        <div id='nutabcontent'>
+          <div class='nucontent actv'>
+            Daily nutrition chart goes here (d3??? 🤔)
+          </div>
+          <div class='nucontent'>
+            Weekly nutrition chart goes here (d3??? 🤔)
+          </div>
+        </div>
+      </div>
+
     </div>
-  
+
   </div>
   
   <div class='archives'>
