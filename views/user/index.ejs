@@ -13,7 +13,7 @@
       <% let mealCounter = 0; %>
       <% if (meals.length !== 0) { %>
         <% meals.forEach((meal) => { %>
-         <% if (moment(meal.createdAt).format('DDD, Y') == moment().format('DDD, Y') ) { %>
+         <% if (moment(meal.createdAt).tz('America/New_York').format('DDD, Y') == moment().tz('America/New_York').format('DDD, Y') ) { %>
           <% include ../partials/todaymeal %>
           <% mealCounter += 1 %>
          <% } %>
@@ -57,7 +57,7 @@
             <% if (meals.length !== 0) {%>
               <% meals.reverse(); %>
               <% meals.forEach((meal) => { %>
-                <% if (moment(meal.createdAt).format('w, YYYY') == moment().format('w, YYYY') ) { %>
+                <% if (moment(meal.createdAt).tz('America/New_York').format('w, YYYY') == moment().tz('America/New_York').format('w, YYYY') ) { %>
                 <% include ../partials/todaymeal %>
                 <% } %>
              <% }) %>
