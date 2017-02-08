@@ -51,7 +51,9 @@ Additional wireframes can be found [here](https://www.dropbox.com/sh/je4oj3ubcu4
 ### Additional Sources:
 
 [Our ZenHub Board](https://github.com/jlr7245/healthify/projects/1?fullscreen=true)
+
 [NUTRITIONIX API](https://developer.nutritionix.com/)
+
 [ICONS from The Noun Project:](https://thenounproject.com/)
 - Daily Meals icon by Anbileru Adaleru,
 - Iced Donut by Imogen Oh,
