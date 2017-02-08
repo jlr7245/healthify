@@ -1,7 +1,7 @@
 function proteinAndFiber(attr) {
   if (attr >= 80) {
     return 'rgba(50,182,122,0.5)';
-  } else if (30 <= attr) {
+  } else if (30 >= attr) {
     return 'rgba(240,63,53,0.5)';
   } else return 'rgba(240,207,97,0.5)';
 }
